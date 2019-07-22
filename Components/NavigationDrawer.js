@@ -7,6 +7,7 @@ import AwfTipsPage from './AwfTipsPage'
 import AwfGame from './AwfGame'
 import AwfTheqPage from './AwfTheqPage'
 import Authentication from './Authentication'
+import ProfilPage from './ProfilPage'
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -32,7 +33,11 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
     'Authentification': {
         screen: Authentication
+    },
+    'Profil':{
+        screen: ProfilPage
     }
+
 
 
     }, {
