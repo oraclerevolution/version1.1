@@ -37,7 +37,7 @@ class ActualitesPage extends React.Component{
                         />
                     }
                 />
-                <ScrollView>
+                <ScrollView style={styles.scrollview}>
                     <View>
                         <FlatList
                             data={actualites}
@@ -52,5 +52,11 @@ class ActualitesPage extends React.Component{
         );
     }
 }
+
+const styles = StyleSheet.create({
+    scrollview: {
+        padding: 20,
+    }
+})
 
 export default ActualitesPage

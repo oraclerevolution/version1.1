@@ -41,7 +41,7 @@ const MyDrawerNavigator = createDrawerNavigator({
 
 
     }, {
-    initialRouteName:'Authentification'
+    initialRouteName:'Accueil'
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
