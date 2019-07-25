@@ -1,4 +1,4 @@
-import {createDrawerNavigator, createAppContainer} from 'react-navigation'
+import { createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation'
 import Ouverture from './Ouverture'
 import AfricaWebFestivalPage from './AfricaWebFestivalPage'
 import AfricaWeb2019 from './AfricaWeb2019'
@@ -8,6 +8,7 @@ import AwfGame from './AwfGame'
 import AwfTheqPage from './AwfTheqPage'
 import Authentication from './Authentication'
 import ProfilPage from './ProfilPage'
+import ActualiteDetail from './ActualiteDetail'
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -44,6 +45,18 @@ const MyDrawerNavigator = createDrawerNavigator({
     initialRouteName:'Accueil'
 });
 
-const MyApp = createAppContainer(MyDrawerNavigator);
+const myStackNavigation = createStackNavigator({
+    actualiteDetail: {
+        screen: ActualiteDetail
+    },
+    home: {
+        screen: MyDrawerNavigator
+    }
+},{
+    initialRouteName: home
+    }
+);
+
+const MyApp = createAppContainer(myStackNavigation);
 
 export default MyApp

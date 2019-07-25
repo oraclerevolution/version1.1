@@ -42,7 +42,7 @@ class ActualitesPage extends React.Component{
                         <FlatList
                             data={actualites}
                             keyExtractor={(item) => item.id.toString()}
-                            renderItem={({item}) => <CardItem actualite={item} /*displayExamForSubject={this._displayExamList}*/ />}
+                            renderItem={({item}) => <CardItem actualite={item} />}
                         />
                     </View>
 
