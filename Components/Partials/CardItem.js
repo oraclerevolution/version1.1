@@ -3,14 +3,16 @@ import { View, Text, Stylesheet,} from 'react-native';
 import { Card, Button,} from 'react-native-elements'
 
 export default class CardItem extends Component {
-
+    constructor(props){
+        super(props)
+    }
 
     getImageFromApi (name) {
         return name
     }
 
     render() {
-        const actualite = this.props.actualite
+        const {actualite, goDetail} = this.props
         return (
             <View>
                 <Card
@@ -19,7 +21,7 @@ export default class CardItem extends Component {
                     <Text style={{marginBottom: 10}}>
                         {actualite.preview}
                     </Text>
-                    <Button
+                    <Button onPress={()=>goDetail()}
                         title="Voir l'article" />
                 </Card>
             </View>
