@@ -7,6 +7,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import actualites from '../Helpers/ActualitesData'
 
 class ActualitesPage extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    goDetail = (e)=>{
+        this.props.navigation.navigate('actualiteDetail',e)
+    }
     render(){
         return(
             <View>
@@ -42,7 +48,7 @@ class ActualitesPage extends React.Component{
                         <FlatList
                             data={actualites}
                             keyExtractor={(item) => item.id.toString()}
-                            renderItem={({item}) => <CardItem actualite={item} />}
+                            renderItem={({item}) => <CardItem actualite={item} goDetail={this.goDetail} />}
                         />
                     </View>
 
