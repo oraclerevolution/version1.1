@@ -42,7 +42,11 @@ const MyDrawerNavigator = createDrawerNavigator({
 
 
     }, {
-    initialRouteName:'Accueil'
+    initialRouteName:'Accueil',
+    headerMode: 'screen',
+    contentOptions : {
+        activeTintColor: '#f7931e'
+    }
 });
 
 const myStackNavigation = createStackNavigator({
@@ -53,7 +57,9 @@ const myStackNavigation = createStackNavigator({
         screen: MyDrawerNavigator
     }
 },{
-    initialRouteName: home
+    initialRouteName: home,
+    headerMode: 'none',
+    
     }
 );
 
