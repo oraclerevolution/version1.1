@@ -1,7 +1,6 @@
 import React from 'react'
 import {StyleSheet, View, Text, ActivityIndicator} from 'react-native'
 import {Button as Buttons, Header} from "react-native-elements";
-import Icon from 'react-native-vector-icons/Ionicons';
 
 class ActualiteDetail extends React.Component {
 
@@ -13,25 +12,16 @@ class ActualiteDetail extends React.Component {
         }
     }
 
-    /*_displayLoading(){
-        if (this.state.isLoading){
-            return(
-                <View style={styles.loadingContainer}>
-                    <ActivityIndicator size='large' />
-                </View>
-            )
-        }
-    }*/
 
     render() {
+        console.log(this.props.navigation);
         return (
             <View style={styles.main_container}>
                 <Header
                     centerComponent={{ text: "Details de l'article", style: { color: '#fff' } }}
                 />
                 <View style={styles.vueDetail}>
-                    /*{this._displayLoading()}*/
-                    <Text>Detail du film {this.props.navigation.getParam('idArticle')}</Text>
+                    <Text>Detail du film</Text>
                 </View>
 
             </View>

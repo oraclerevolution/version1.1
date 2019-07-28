@@ -10,8 +10,8 @@ class ActualitesPage extends React.Component{
     constructor(props){
         super(props);
     }
-    goDetail = (idArticle)=>{
-        this.props.navigation.navigate('actualiteDetail',{idArticle: idArticle})
+    goDetail = (e)=>{
+        this.props.navigation.navigate('actualiteDetail',e)
     };
 
     render(){
