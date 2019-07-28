@@ -45,7 +45,7 @@ const MyDrawerNavigator = createDrawerNavigator({
     initialRouteName:'Accueil',
     headerMode: 'screen',
     contentOptions : {
-        activeTintColor: '#f7931e'
+        activeTintColor: '#6eccee'
     }
 });
 

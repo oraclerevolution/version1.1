@@ -1,6 +1,6 @@
 import React from 'react'
 import {Header} from 'react-native-elements'
-import {StyleSheet, View, Button, Text, Alert, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Button, Text, Alert, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import Textarea from 'react-native-textarea';
 import { Button as Buttons } from 'react-native-elements';
@@ -36,7 +36,7 @@ export default class InteretPage extends React.Component{
 
     render(){
         return(
-            <View style={styles.container}>
+            <View behavior="padding" style={styles.container}>
                 <Header
                     leftComponent={
                         <Buttons
@@ -52,47 +52,45 @@ export default class InteretPage extends React.Component{
                     }
                     centerComponent={{ text: 'Votre intérêt', style: { color: '#fff' } }}
                 />
+                    <View style={styles.AccordionView} >
+                        <Text style={styles.title}>Exprimez votre intérêt pour AWF2019</Text>
 
-                <View style={styles.AccordionView} >
-                    <Text style={styles.title}>Exprimez votre intérêt pour AWF2019</Text>
-
-                    <TextInput
-                        label='Nom et prénoms'
-                        value={this.state.name}
-                        style={styles.champ}
-                        onChangeText={name => this.setState({ name })}
-                    />
-
-                    <TextInput
-                        label='Profession'
-                        value={this.state.grade}
-                        style={styles.champ}
-                        onChangeText={grade => this.setState({ grade })}
-                    />
-
-                    <TextInput
-                        label='Sujet'
-                        value={this.state.sujet}
-                        style={styles.champ}
-                        onChangeText={sujet => this.setState({ sujet })}
-                    />
-
-                    <Textarea
-                        containerStyle={styles.textareaContainer}
-                        style={styles.textarea}
-                        onChangeText={message => this.setState({ message })}
-                        maxLength={200}
-                        placeholder={"J'aimerais exposer à AWF2019 en temps que créateur d'une nouvelle startup"}
-                    />
-
-                    <TouchableOpacity style={styles.btn_soumettre}>
-                        <Button
-                            title={"Soumettre"}
-                            onPress={this._TouchAlert.bind(this)}
+                        <TextInput
+                            label='Nom et prénoms'
+                            value={this.state.name}
+                            style={styles.champ}
+                            onChangeText={name => this.setState({ name })}
                         />
-                    </TouchableOpacity>
-                </View>
 
+                        <TextInput
+                            label='Profession'
+                            value={this.state.grade}
+                            style={styles.champ}
+                            onChangeText={grade => this.setState({ grade })}
+                        />
+
+                        <TextInput
+                            label='Sujet'
+                            value={this.state.sujet}
+                            style={styles.champ}
+                            onChangeText={sujet => this.setState({ sujet })}
+                        />
+
+                        <Textarea
+                            containerStyle={styles.textareaContainer}
+                            style={styles.textarea}
+                            onChangeText={message => this.setState({ message })}
+                            maxLength={200}
+                            placeholder={"J'aimerais exposer à AWF2019 en temps que créateur d'une nouvelle startup"}
+                        />
+
+                        <TouchableOpacity style={styles.btn_soumettre}>
+                            <Button
+                                title={"Soumettre"}
+                                onPress={this._TouchAlert.bind(this)}
+                            />
+                        </TouchableOpacity>
+                    </View>
             </View>
         )
     }

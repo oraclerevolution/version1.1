@@ -1,6 +1,6 @@
 import React from 'react'
-import {View,StyleSheet,Image,Button,Text} from 'react-native'
-
+import {View,StyleSheet,Image,Button,Text, ImageBackground} from 'react-native'
+import bgImage from '../assets/ouverture.jpg'
 
 export default class Ouverture extends React.Component{
 
@@ -9,14 +9,11 @@ export default class Ouverture extends React.Component{
     }
     render(){
         return(
-            <View style={styles.container}>
-                <Image
-                    style={styles.strech}
-                    source={require('../assets/logo_awf.png')}
-                />
-                <Text style={styles.text}>LE PLUS GRAND RASSEMBLEMENT DU NUMERIQUE, DE L'ENTREPRENEURIAT ET DE L'INNOVATION EN AFRIQUE</Text>
-                <Button title={"Continuer"} onPress={this.onpenDrawer.bind(this)} />
-            </View>
+            <ImageBackground source={bgImage} style={styles.container}>
+                <View style={styles.buttonVue}>
+                    <Button title={"Continuer"} onPress={this.onpenDrawer.bind(this)} style={styles.btn} />
+                </View>
+            </ImageBackground>
         )
     }
 }
@@ -24,19 +21,15 @@ export default class Ouverture extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: null,
+        height: null,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10
     },
-    text: {
-        textAlign: 'center',
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 10
+    buttonVue: {
+        flex:1,
+        justifyContent: 'flex-end',
+        paddingBottom: 80
     },
-    strech: {
-        marginBottom: 10,
-        width: 150,
-        height: 150
-    }
+
 })
