@@ -12,6 +12,16 @@ class ActualiteDetail extends React.Component {
         }
     }
 
+    _displayLoading(){
+        if (this.state.isLoading){
+            return(
+                <View style={styles.loadingContainer}>
+                    <ActivityIndicator size="large"/>
+                </View>
+            )
+        }
+    }
+
 
     render() {
         console.log(this.props.navigation);
@@ -21,7 +31,7 @@ class ActualiteDetail extends React.Component {
                     centerComponent={{ text: "Details de l'article", style: { color: '#fff' } }}
                 />
                 <View style={styles.vueDetail}>
-                    <Text>Detail du film</Text>
+                    {this._displayLoading()}
                 </View>
 
             </View>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Header} from 'react-native-elements'
-import {StyleSheet, View, Button, Text, Alert, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+import {StyleSheet, View, Button, Text, Alert, TouchableOpacity} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import Textarea from 'react-native-textarea';
 import { Button as Buttons } from 'react-native-elements';
@@ -36,7 +36,7 @@ export default class InteretPage extends React.Component{
 
     render(){
         return(
-            <View behavior="padding" style={styles.container}>
+            <View style={styles.container}>
                 <Header
                     leftComponent={
                         <Buttons
@@ -52,6 +52,7 @@ export default class InteretPage extends React.Component{
                     }
                     centerComponent={{ text: 'Votre intérêt', style: { color: '#fff' } }}
                 />
+
                     <View style={styles.AccordionView} >
                         <Text style={styles.title}>Exprimez votre intérêt pour AWF2019</Text>
 

@@ -21,7 +21,7 @@ export default class CardItem extends Component {
                     <Text style={{marginBottom: 10}}>
                         {actualite.preview}
                     </Text>
-                    <Button onPress={()=>goDetail()}
+                    <Button onPress={()=>goDetail(actualite.id)}
                         title="Voir l'article" />
                 </Card>
             </View>
