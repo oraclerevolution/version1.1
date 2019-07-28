@@ -12,7 +12,7 @@ export default class CardItem extends Component {
     }
 
     render() {
-        const {actualite, goDetail} = this.props
+        const {actualite, goDetail} = this.props;
         return (
             <View>
                 <Card

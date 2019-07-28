@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, StyleSheet, FlatList, ScrollView} from 'react-native'
+import {View, StyleSheet, FlatList, ScrollView, ActivityIndicator} from 'react-native'
 import CardItem from './Partials/CardItem'
 import {Header} from 'react-native-elements'
 import { Button } from 'react-native-elements';
@@ -8,11 +8,12 @@ import actualites from '../Helpers/ActualitesData'
 
 class ActualitesPage extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
     }
-    goDetail = (e)=>{
-        this.props.navigation.navigate('actualiteDetail',e)
-    }
+    goDetail = (idArticle)=>{
+        this.props.navigation.navigate('actualiteDetail',{idArticle: idArticle})
+    };
+
     render(){
         return(
             <View>
@@ -62,7 +63,7 @@ class ActualitesPage extends React.Component{
 const styles = StyleSheet.create({
     scrollview: {
         padding: 20,
-    }
+    },
 })
 
 export default ActualitesPage

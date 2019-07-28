@@ -57,7 +57,7 @@ const myStackNavigation = createStackNavigator({
         screen: MyDrawerNavigator
     }
 },{
-    initialRouteName: home,
+    initialRouteName: 'home',
     headerMode: 'none',
     
     }
