@@ -14,7 +14,6 @@ export default class CardItem extends Component {
     render() {
         const {actualite, goDetail} = this.props;
         return (
-            <View>
                 <Card
                     title={actualite.title}
                     image={{uri: this.getImageFromApi(actualite.image)}}>
@@ -24,7 +23,6 @@ export default class CardItem extends Component {
                     <Button onPress={()=>goDetail(actualite.id)}
                         title="Voir l'article" />
                 </Card>
-            </View>
         );
     }
 }

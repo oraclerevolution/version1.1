@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, StyleSheet, FlatList, ScrollView, ActivityIndicator} from 'react-native'
+import {View, StyleSheet, FlatList, ScrollView} from 'react-native'
 import CardItem from './Partials/CardItem'
 import {Header} from 'react-native-elements'
 import { Button } from 'react-native-elements';
@@ -18,7 +18,7 @@ class ActualitesPage extends React.Component{
 
     render(){
         return(
-            <View>
+            <View style={{flex:1}}>
                 <Header
                     leftComponent={
                         <Button
@@ -46,16 +46,14 @@ class ActualitesPage extends React.Component{
                         />
                     }
                 />
-                <ScrollView style={styles.scrollview}>
-                    <View>
+
+                    <ScrollView style={styles.scrollview}>
                         <FlatList
                             data={actualites}
                             keyExtractor={(item) => item.id.toString()}
                             renderItem={({item}) => <CardItem actualite={item} goDetail={this.goDetail} />}
                         />
-                    </View>
-
-                </ScrollView>
+                    </ScrollView>
 
             </View>
         );
@@ -64,7 +62,6 @@ class ActualitesPage extends React.Component{
 
 const styles = StyleSheet.create({
     scrollview: {
-        padding: 20,
     },
 })
 
