@@ -10,7 +10,7 @@ export default class InteretPage extends React.Component{
 
     state = {
         name: '',
-        grade: '',
+        email: '',
         sujet: '',
         message: '',
     };
@@ -64,10 +64,10 @@ export default class InteretPage extends React.Component{
                         />
 
                         <TextInput
-                            label='Profession'
-                            value={this.state.grade}
+                            label='Votre email'
+                            value={this.state.email}
                             style={styles.champ}
-                            onChangeText={grade => this.setState({ grade })}
+                            onChangeText={email => this.setState({ email })}
                         />
 
                         <TextInput
