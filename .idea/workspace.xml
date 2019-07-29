@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0351a65-badf-464d-a811-961bd8b5d0c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Components/ActualitesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/ActualitesPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Partials/CardItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Partials/CardItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/ActualitesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/ActualitesData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Partials/ProjectsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Partials/ProjectsPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,11 +24,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Components/ActualitesPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
+            <state relative-caret-position="341">
               <caret line="64" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Components/Partials/ProjectsPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="156" column="27" selection-start-line="156" selection-start-column="27" selection-end-line="156" selection-end-column="27" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -79,7 +89,6 @@
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/Components/Partials/ObjectifsPage.js" />
         <option value="$PROJECT_DIR$/Components/Partials/AfricanitePage.js" />
-        <option value="$PROJECT_DIR$/Components/Partials/ProjectsPage.js" />
         <option value="$PROJECT_DIR$/Components/Partials/ThematiquesPage.js" />
         <option value="$PROJECT_DIR$/Components/Partials/EvenementPage.js" />
         <option value="$PROJECT_DIR$/Components/AwfTipsPage.js" />
@@ -104,6 +113,7 @@
         <option value="$PROJECT_DIR$/Components/Partials/CardItem.js" />
         <option value="$PROJECT_DIR$/Helpers/ActualitesData.js" />
         <option value="$PROJECT_DIR$/Components/ActualitesPage.js" />
+        <option value="$PROJECT_DIR$/Components/Partials/ProjectsPage.js" />
       </list>
     </option>
   </component>
@@ -132,6 +142,12 @@
               <item name="version1.1" type="b2602c69:ProjectViewProjectNode" />
               <item name="version1.1" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="version1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="version1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Partials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="version1.1" type="b2602c69:ProjectViewProjectNode" />
@@ -211,12 +227,12 @@
       <workItem from="1563530220756" duration="14051000" />
       <workItem from="1564002917549" duration="6283000" />
       <workItem from="1564301624973" duration="6973000" />
-      <workItem from="1564334254740" duration="16561000" />
+      <workItem from="1564334254740" duration="17262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80508000" />
+    <option name="totallyTimeSpent" value="81209000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -231,7 +247,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2822823" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2822823" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -243,7 +259,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298611" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3298611" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3298611" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.8420139" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -332,13 +348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/Partials/ProjectsPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -562,8 +571,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Components/ActualitesPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
+        <state relative-caret-position="341">
           <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/Partials/ProjectsPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="156" column="27" selection-start-line="156" selection-start-column="27" selection-end-line="156" selection-end-column="27" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

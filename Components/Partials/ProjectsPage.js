@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,StyleSheet, Text} from 'react-native'
+import {View,StyleSheet, Text, ScrollView} from 'react-native'
 import {Header} from 'react-native-elements'
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -154,7 +154,7 @@ export default class ProjectsPage extends React.Component{
                     centerComponent={{ text: 'Projets', style: { color: '#fff' } }}
                 />
 
-                <View style={styles.AccordionView}>
+                <ScrollView style={styles.AccordionView}>
                     <Accordion
                         sections={SECTIONS}
                         activeSections={this.state.activeSections}
@@ -163,7 +163,7 @@ export default class ProjectsPage extends React.Component{
                         renderContent={this._renderContent}
                         onChange={this._updateSections}
                     />
-                </View>
+                </ScrollView>
             </View>
 
         )
