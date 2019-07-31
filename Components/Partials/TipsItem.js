@@ -4,10 +4,9 @@ import { StyleSheet, View, Text,TouchableOpacity } from 'react-native';
 class TipsItem extends React.Component {
 
     render() {
-        //const {chapitre, displayChapterSubject} = this.props
         const tips = this.props.tips
         return (
-            <TouchableOpacity /*onPress={()=> displayChapterSubject(chapitre.id)}*/>
+            <TouchableOpacity>
                 <View style={styles.matiereItem}>
                     <Text style={styles.title_text}>{tips.name}</Text>
                     <Text style={styles.description_text} numberOfLines={3}>{tips.description}</Text>
