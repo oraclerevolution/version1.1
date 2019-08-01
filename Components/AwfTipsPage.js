@@ -35,6 +35,11 @@ export default class AwfTipsPage extends React.Component{
             .catch((error) => console.error(error))
     }
 
+    _displayDetailForTips = (idTip) => {
+        console.log("Display tip with id " + idTip)
+        this.props.navigation.navigate("tipsDetail", { idTip: idTip})
+    }
+
     render() {
 
         return(
@@ -58,7 +63,7 @@ export default class AwfTipsPage extends React.Component{
                     <FlatList
                         data={this.state.tips}
                         keyExtractor={(item) => item.id.toString()}
-                        renderItem={({item}) => <TipsItem tips={item} />}
+                        renderItem={({item}) => <TipsItem tips={item} displayDetailForTip={this._displayDetailForTips} />}
                         numColumns={2}
                     />
                     {this._displayLoading()}

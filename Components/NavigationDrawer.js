@@ -9,6 +9,7 @@ import AwfTheqPage from './AwfTheqPage'
 import Authentication from './Authentication'
 import ProfilPage from './ProfilPage'
 import ActualiteDetail from './ActualiteDetail'
+import TipsDetail from './TipsDetail'
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -52,6 +53,9 @@ const MyDrawerNavigator = createDrawerNavigator({
 const myStackNavigation = createStackNavigator({
     actualiteDetail: {
         screen: ActualiteDetail
+    },
+    tipsDetail: {
+        screen: TipsDetail
     },
     home: {
         screen: MyDrawerNavigator
