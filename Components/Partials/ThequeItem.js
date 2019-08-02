@@ -4,13 +4,10 @@ import { StyleSheet, View, Text,TouchableOpacity } from 'react-native';
 class ThequeItem extends React.Component {
 
     render() {
-        //const {chapitre, displayChapterSubject} = this.props
-        const theq = this.props.theq
+        const {theq, displayDetailForTeque} = this.props
         return (
-            <TouchableOpacity /*onPress={()=> displayChapterSubject(chapitre.id)}*/>
-                <View style={styles.matiereItem}>
+            <TouchableOpacity onPress={()=>displayDetailForTeque(theq.id)} style={styles.matiereItem}>
                     <Text style={styles.title_text}>{theq.name}</Text>
-                </View>
             </TouchableOpacity>
         );
     }

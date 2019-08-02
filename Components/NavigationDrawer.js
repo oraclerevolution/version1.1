@@ -10,6 +10,7 @@ import Authentication from './Authentication'
 import ProfilPage from './ProfilPage'
 import ActualiteDetail from './ActualiteDetail'
 import TipsDetail from './TipsDetail'
+import ThequeDetail from './ThequeDetail'
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -56,6 +57,9 @@ const myStackNavigation = createStackNavigator({
     },
     tipsDetail: {
         screen: TipsDetail
+    },
+    thequeDetail: {
+        screen: ThequeDetail
     },
     home: {
         screen: MyDrawerNavigator

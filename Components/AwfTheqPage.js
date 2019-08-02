@@ -1,12 +1,46 @@
 import React from 'react'
-import {View,Text,StyleSheet, FlatList, ScrollView} from 'react-native'
+import {View, Text, StyleSheet, FlatList, ScrollView, ActivityIndicator} from 'react-native'
 import ThequeItem from './Partials/ThequeItem'
-import theqdata from '../Helpers/ThequeFolderData'
 import { Button as Buttons } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Header} from 'react-native-elements'
 
 export default class AwfTheqPage extends React.Component{
+
+    constructor(){
+        super()
+        this.state = { theques: [], isLoading: true}
+    }
+
+    _displayLoading(){
+        if(this.state.isLoading){
+            return(
+                <View style={styles.loaging_container}>
+                    <ActivityIndicator size='large' />
+                </View>
+            )
+        }
+    }
+
+    getTheqFromApi(){
+        let url = 'http://137.74.116.91:3334/allTheques';
+
+        return fetch(url)
+            .then((response) => response.json())
+            .catch((error) => console.error(error))
+    }
+
+    _displayDetailForTeque = (idTheq) => {
+        console.log("Display tip with id " + idTheq)
+        this.props.navigation.navigate("thequeDetail", { idTheq: idTheq})
+    }
+
+    componentDidMount() {
+        this.getTheqFromApi().then(data => {
+            this.setState({ theques: data.data.theques, isLoading: false})
+        })
+    }
+
     render() {
         return(
             <View style={styles.container}>
@@ -27,11 +61,12 @@ export default class AwfTheqPage extends React.Component{
                 />
                 <ScrollView>
                     <FlatList
-                        data={theqdata}
+                        data={this.state.theques}
                         keyExtractor={(item) => item.id.toString()}
-                        renderItem={({item}) => <ThequeItem theq={item} /*displayChapterSubject={this._displayChapterOfSubject}*/ />}
+                        renderItem={({item}) => <ThequeItem theq={item} displayDetailForTeque={this._displayDetailForTeque()} />}
                         numColumns={2}
                     />
+                    {this._displayLoading()}
                 </ScrollView>
             </View>
         )
