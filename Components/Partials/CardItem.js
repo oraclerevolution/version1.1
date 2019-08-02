@@ -8,7 +8,7 @@ export default class CardItem extends Component {
     }
 
     getImageFromApi (name) {
-        return name
+        return 'http://137.74.116.91:3334/images/'+ name
     }
 
     render() {
@@ -16,7 +16,7 @@ export default class CardItem extends Component {
         return (
                 <Card
                     title={actualite.title}
-                    image={{uri: this.getImageFromApi(actualite.image)}}>
+                    image={{uri: this.getImageFromApi(actualite.photo)}}>
                     <Text style={{marginBottom: 10}}>
                         {actualite.preview}
                     </Text>

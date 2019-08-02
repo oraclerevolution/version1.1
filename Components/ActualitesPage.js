@@ -9,12 +9,29 @@ import actualites from '../Helpers/ActualitesData'
 class ActualitesPage extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            articles: []
+        }
     }
 
     goDetail = (idArticle)=>{
         console.log("Display article id " + idArticle)
         this.props.navigation.navigate('actualiteDetail',{ idArticle: idArticle})
     };
+
+    getArticlesFromApi(){
+        let url = 'http://137.74.116.91:3334/articles'
+
+        return fetch(url)
+            .then((response) => response.json())
+            .catch((error) => console.error(error))
+    }
+
+    componentDidMount() {
+        this.getArticlesFromApi().then(data => {
+            this.setState({articles: data.data})
+        })
+    }
 
     render(){
         return(
@@ -49,7 +66,7 @@ class ActualitesPage extends React.Component{
 
                     <ScrollView style={styles.scrollview}>
                         <FlatList
-                            data={actualites}
+                            data={this.state.articles}
                             keyExtractor={(item) => item.id.toString()}
                             renderItem={({item}) => <CardItem actualite={item} goDetail={this.goDetail} />}
                         />
