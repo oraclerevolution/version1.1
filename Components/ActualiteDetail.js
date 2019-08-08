@@ -14,7 +14,7 @@ class ActualiteDetail extends React.Component {
     }
 
     getArticleDetailFromApi(id){
-        return fetch('http://137.74.116.91:3334/article/' + id)
+        return fetch('http://51.68.44.231:3334/article/' + id)
             .then((response) => response.json())
             .catch((error) => console.error(error))
     }
@@ -29,7 +29,7 @@ class ActualiteDetail extends React.Component {
     }
 
     getImageFromApi (name) {
-        return 'http://137.74.116.91:3334/images/'+ name
+        return 'http://51.68.44.231:3334/images/'+ name
     }
 
     _displayLoading(){

@@ -1,6 +1,7 @@
 import React from 'react'
-import {View, StyleSheet, Text, ActivityIndicator} from 'react-native'
+import {View, StyleSheet, Text, ActivityIndicator, ScrollView, FlatList} from 'react-native'
 import {Header} from 'react-native-elements'
+import VideoItem from './Partials/VideoItem'
 
 export default class ThequeDetail extends React.Component{
 
@@ -23,7 +24,7 @@ export default class ThequeDetail extends React.Component{
     }
 
     getThequeDetailFromApi(id){
-        return fetch('http://137.74.116.91:3334/theques/'+id)
+        return fetch('http://51.68.44.231:3334/theques/'+id)
             .then((response) => response.json())
             .catch((error) => console.error(error))
     }
@@ -37,16 +38,32 @@ export default class ThequeDetail extends React.Component{
         })
     }
 
+    _displayTheque(){
+        if (this.state.theque != undefined){
+            return(
+                <ScrollView>
+                    <FlatList
+                        data={this.state.theque}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({item}) => <VideoItem video={item} />}
+                        numColumns={2}
+                    />
+                </ScrollView>
+            )
+        }
+    }
+
     render(){
         return(
-            <view style={styles.main_container}>
+            <View style={styles.main_container}>
                 <Header
                     centerComponent={{ text: 'La bibliothèque', style: { color: '#fff' } }}
                 />
                 <View style={{flex:1,}}>
                     {this._displayLoading()}
+                    {this._displayTheque()}
                 </View>
-            </view>
+            </View>
         )
     }
 }

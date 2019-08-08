@@ -24,7 +24,7 @@ export default class TipsDetail extends React.Component{
     }
 
     getTipsDetailFromApi(id){
-        return fetch('http://137.74.116.91:3334/tips/'+id)
+        return fetch('http://51.68.44.231:3334/tips/'+id)
             .then((response) => response.json())
             .catch((error) => console.error(error))
     }

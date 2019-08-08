@@ -63,7 +63,7 @@ export default class AwfTheqPage extends React.Component{
                     <FlatList
                         data={this.state.theques}
                         keyExtractor={(item) => item.id.toString()}
-                        renderItem={({item}) => <ThequeItem theq={item} displayDetailForTeque={this._displayDetailForTeque()} />}
+                        renderItem={({item}) => <ThequeItem theq={item} />}
                         numColumns={2}
                     />
                     {this._displayLoading()}
