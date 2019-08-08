@@ -20,7 +20,7 @@ class ActualitesPage extends React.Component{
     };
 
     getArticlesFromApi(){
-        let url = 'http://137.74.116.91:3334/articles'
+        let url = 'http://51.68.44.231:3334/articles'
 
         return fetch(url)
             .then((response) => response.json())

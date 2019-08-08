@@ -31,7 +31,7 @@ export default class ThequeDetail extends React.Component{
     componentDidMount() {
         this.getThequeDetailFromApi(this.props.navigation.state.params.idTheq).then(data => {
             this.setState({
-                tip: data.data.items,
+                theque: data.data.items,
                 isLoading: false
             })
         })
