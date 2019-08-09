@@ -1,8 +1,7 @@
 import React from 'react'
-import {View, Text, Button, StyleSheet, Image, TouchableOpacity} from 'react-native'
+import {View, Text, Button, TextInput, StyleSheet, KeyboardAvoidingView, Image, TouchableOpacity} from 'react-native'
 import {Button as Buttons, Header} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons';
-import {TextInput} from 'react-native-paper';
 
 export default class InscriptionPage extends React.Component{
 
@@ -11,8 +10,28 @@ export default class InscriptionPage extends React.Component{
         this.state = {
             username: '',
             numero: '',
-            password: ''
+            password: '',
         }
+
+        //fonction binding
+        this._register = this._register.bind(this)
+    }
+
+    _register(){
+
+        fetch('http://51.68.44.231:3334/register', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: this.state.username,
+                numero: this.state.numero,
+                password: this.state.password,
+            }),
+        }).then((response) => response.json()).catch((error) => console.error(error))
+        this.props.navigation.navigate('connexion')
     }
 
     render(){
@@ -33,7 +52,7 @@ export default class InscriptionPage extends React.Component{
                     }
                     centerComponent={{ text: 'Inscrivez-vous', style: { color: '#fff' } }}
                 />
-                <View style={styles.form}>
+                <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
                     <Image
                         source={require('../assets/logo_awf.png')}
                         style={styles.strech}
@@ -41,21 +60,21 @@ export default class InscriptionPage extends React.Component{
                     <Text style={{fontSize:22,fontWeight:'bold'}}>Inscrivez-vous</Text>
 
                     <TextInput
-                        label="nom d'utilisateur"
+                        placeholder="nom d'utilisateur"
                         value={this.state.username}
                         style={styles.champ}
                         onChangeText={username => this.setState({ username })}
                     />
 
                     <TextInput
-                        label="numero de telephone"
+                        placeholder="numero de telephone"
                         value={this.state.numero}
                         style={styles.champ}
                         onChangeText={numero => this.setState({ numero })}
                     />
 
                     <TextInput
-                        label='mot de passe'
+                        placeholder='mot de passe'
                         value={this.state.password}
                         style={styles.champ}
                         secureTextEntry={true}
@@ -65,11 +84,11 @@ export default class InscriptionPage extends React.Component{
                     <TouchableOpacity style={styles.btn_soumettre}>
                         <Button
                             title={"Inscription"}
-                            onPress={()=>console.log('ok')}
+                            onPress={()=>this._register()}
                         />
                     </TouchableOpacity>
 
-                </View>
+                </KeyboardAvoidingView>
             </View>
         );
     }
@@ -89,7 +108,10 @@ const styles = StyleSheet.create({
         height: 110,
     },
     champ: {
-        margin: 10
+        margin: 10,
+        borderBottomWidth:1,
+        padding:6,
+        width:250
     },
     btn_soumettre: {
         marginTop: 10

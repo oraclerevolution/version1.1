@@ -1,8 +1,8 @@
 import React from 'react'
-import {View, Text, Button, StyleSheet, Image, TouchableOpacity} from 'react-native'
+import {View, Text, Button, StyleSheet, TextInput, KeyboardAvoidingView, Image, TouchableOpacity} from 'react-native'
 import {Button as Buttons, Header} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons';
-import {TextInput} from 'react-native-paper';
+//import {TextInput} from 'react-native-paper';
 
 export default class ConnexionPage extends React.Component{
 
@@ -32,7 +32,7 @@ export default class ConnexionPage extends React.Component{
                   }
                   centerComponent={{ text: 'Connectez-vous', style: { color: '#fff' } }}
               />
-              <View style={styles.form}>
+              <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
                   <Image
                     source={require('../assets/logo_awf.png')}
                     style={styles.strech}
@@ -40,14 +40,14 @@ export default class ConnexionPage extends React.Component{
                   <Text style={{fontSize:22,fontWeight:'bold'}}>Connectez-vous</Text>
 
                   <TextInput
-                      label='identifiant perso'
+                      placeholder='numéro de telephone'
                       value={this.state.id_username}
                       style={styles.champ}
                       onChangeText={id_username => this.setState({ id_username })}
                   />
 
                   <TextInput
-                      label='mot de passe'
+                      placeholder='mot de passe'
                       value={this.state.password}
                       style={styles.champ}
                       secureTextEntry={true}
@@ -61,7 +61,7 @@ export default class ConnexionPage extends React.Component{
                       />
                   </TouchableOpacity>
                   
-              </View>
+              </KeyboardAvoidingView>
           </View>
         );
     }
@@ -74,14 +74,17 @@ const styles = StyleSheet.create({
     form:{
         justifyContent: 'center',
         alignItems: 'center',
-        flex:1
+        flex:1,
     },
     strech: {
         width: 110,
         height: 110,
     },
     champ: {
-        margin: 10
+        margin: 10,
+        borderBottomWidth:1,
+        padding:6,
+        width:250
     },
     btn_soumettre: {
         marginTop: 10

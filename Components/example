@@ -1,0 +1,11 @@
+composant de dynamisation de awfThequePage
+
+<ScrollView>
+    <FlatList
+        data={this.state.theques}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({item}) => <ThequeItem theq={item} />}
+        numColumns={2}
+    />
+    {this._displayLoading()}
+</ScrollView>

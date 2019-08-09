@@ -1,4 +1,6 @@
 import { createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation'
+import { AsyncStorage } from "react-native";
+
 import Ouverture from './Ouverture'
 import AfricaWebFestivalPage from './AfricaWebFestivalPage'
 import AfricaWeb2019 from './AfricaWeb2019'
@@ -7,10 +9,14 @@ import AwfTipsPage from './AwfTipsPage'
 import AwfGame from './AwfGame'
 import AwfTheqPage from './AwfTheqPage'
 import Authentication from './Authentication'
-import ProfilPage from './ProfilPage'
+//import ProfilPage from './ProfilPage'
 import ActualiteDetail from './ActualiteDetail'
 import TipsDetail from './TipsDetail'
 import ThequeDetail from './ThequeDetail'
+import ConnexionPage from './ConnexionPage'
+import InscriptionPage from './InscriptionPage'
+import Congratulations from './Congratulations'
+import InteretPage from './Partials/InteretPage';
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -37,11 +43,6 @@ const MyDrawerNavigator = createDrawerNavigator({
     'Authentification': {
         screen: Authentication
     },
-    'Profil':{
-        screen: ProfilPage
-    }
-
-
 
     }, {
     initialRouteName:'Accueil',
@@ -52,17 +53,32 @@ const MyDrawerNavigator = createDrawerNavigator({
 });
 
 const myStackNavigation = createStackNavigator({
-    actualiteDetail: {
+    "actualiteDetail": {
         screen: ActualiteDetail
     },
-    tipsDetail: {
+    'Accueil': {
+        screen: Ouverture,
+    },
+    "tipsDetail": {
         screen: TipsDetail
     },
-    thequeDetail: {
+    "thequeDetail": {
         screen: ThequeDetail
     },
-    home: {
+    "home": {
         screen: MyDrawerNavigator
+    },
+    "felicitation": {
+        screen: Congratulations
+    },
+    "connexion": {
+        screen: ConnexionPage
+    },
+    "inscription": {
+        screen: InscriptionPage
+    },
+    "interet": {
+        screen: InteretPage
     }
 },{
     initialRouteName: 'home',

@@ -4,7 +4,6 @@ import CardItem from './Partials/CardItem'
 import {Header} from 'react-native-elements'
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-import actualites from '../Helpers/ActualitesData'
 
 class ActualitesPage extends React.Component{
     constructor(props){

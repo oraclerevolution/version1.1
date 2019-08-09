@@ -8,12 +8,36 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class InteretPage extends React.Component{
 
-    state = {
-        name: '',
-        email: '',
-        sujet: '',
-        message: '',
-    };
+    constructor(){
+        super()
+        this.state = {
+            name: '',
+            email: '',
+            sujet: '',
+            message: '',
+        };
+        this._postReseau = this._postReseau.bind(this)
+        this._TouchAlert = this._TouchAlert.bind(this)
+    }
+    
+
+    _postReseau(){ 
+
+        fetch('http://51.68.44.231:3334/reseau', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: this.state.username,
+                email: this.state.email,
+                sujet: this.state.sujet,
+                message: this.state.message
+            }),
+        })
+        this.props.navigation.navigate('felicitation')
+    }
 
     _TouchAlert(){
         Alert.alert(
@@ -27,7 +51,7 @@ export default class InteretPage extends React.Component{
                 },
                 {
                     text: 'Oui',
-                    onPress: () => console.log('Ca marche !')
+                    onPress: () => this._postReseau()
                 },
             ],
             {cancelable: false},

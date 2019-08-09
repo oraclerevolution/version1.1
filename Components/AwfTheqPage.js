@@ -59,15 +59,9 @@ export default class AwfTheqPage extends React.Component{
                     }
                     centerComponent={{ text: 'AWF Thèque', style: { color: '#fff' } }}
                 />
-                <ScrollView>
-                    <FlatList
-                        data={this.state.theques}
-                        keyExtractor={(item) => item.id.toString()}
-                        renderItem={({item}) => <ThequeItem theq={item} />}
-                        numColumns={2}
-                    />
-                    {this._displayLoading()}
-                </ScrollView>
+                <View style={styles.viewTheque}>
+                    <Text>Bibliothèque AWF pas encore disponible ...</Text>
+                </View>
             </View>
         )
     }
@@ -76,5 +70,10 @@ export default class AwfTheqPage extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex:1,
+    },
+    viewTheque: {
+        flex:1,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
