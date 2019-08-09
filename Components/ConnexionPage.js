@@ -2,7 +2,6 @@ import React from 'react'
 import {View, Text, Button, StyleSheet, TextInput, KeyboardAvoidingView, Image, TouchableOpacity} from 'react-native'
 import {Button as Buttons, Header} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons';
-//import {TextInput} from 'react-native-paper';
 
 export default class ConnexionPage extends React.Component{
 

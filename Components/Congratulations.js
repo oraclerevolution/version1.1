@@ -1,7 +1,6 @@
 import React from 'react'
 import {View, StyleSheet, Image, Text, FlatList, ScrollView, TouchableOpacity} from 'react-native'
 import { Button, Header } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Congratulations extends React.Component{
     render(){

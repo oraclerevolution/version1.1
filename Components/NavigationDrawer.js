@@ -1,5 +1,4 @@
 import { createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation'
-import { AsyncStorage } from "react-native";
 
 import Ouverture from './Ouverture'
 import AfricaWebFestivalPage from './AfricaWebFestivalPage'
