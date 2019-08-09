@@ -31,7 +31,7 @@ export default class InscriptionPage extends React.Component{
                 password: this.state.password,
             }),
         }).then((response) => response.json()).catch((error) => console.error(error))
-        this.props.navigation.navigate('connexion')
+        this.props.navigation.navigate('connex')
     }
 
     render(){

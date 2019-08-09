@@ -79,6 +79,9 @@ const myStackNavigation = createStackNavigator({
     },
     "interet": {
         screen: InteretPage
+    },
+    "connex": {
+        screen: Authentication
     }
 },{
     initialRouteName: 'home',
