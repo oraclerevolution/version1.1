@@ -24,7 +24,7 @@ export default class AssetExample extends React.Component {
                             onPress={()=>this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Africa Web Festival 2019', style: { color: '#fff', fontSize:18 } }}
+                    centerComponent={{ text: 'Africa Web APP', style: { color: '#fff', fontSize:18 } }}
                 />
                 <ScrollView style={styles.container}>
                     <Text style={styles.paragraph}>Quoi d'neuf ?</Text>
@@ -104,7 +104,7 @@ export default class AssetExample extends React.Component {
 
                 </ScrollView>
                 <View style={{backgroundColor:'#0a2849', height:80,}}>
-                    <Text style={{textAlign:'center', color:'white',fontSize:13, padding:10}}>© AFRICA WEB FESTIVAL 2019 - TOUS DROITS RESERVES</Text>
+                    <Text style={{textAlign:'center', color:'white',fontSize:13, padding:10}}>© AFRICA WEB APP - TOUS DROITS RESERVES</Text>
                     <Text style={{textAlign:'center', color:'white',fontSize:13,}}>App powered by WeenovIT</Text>
                 </View>
             </View>

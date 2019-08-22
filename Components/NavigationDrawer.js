@@ -16,7 +16,7 @@ import ThequeDetail from './ThequeDetail'
 import ConnexionPage from './ConnexionPage'
 import InscriptionPage from './InscriptionPage'
 import Congratulations from './Congratulations'
-import InteretPage from './Partials/InteretPage';
+import InteretPage from './Partials/InteretPage'
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -27,6 +27,9 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
     'AWF 2019': {
         screen: AfricaWeb2019
+    },
+    'Le programme': {
+        screen: Programme
     },
     'Les actualités': {
         screen: ActualitesPage
