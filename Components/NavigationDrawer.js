@@ -4,6 +4,7 @@ import Ouverture from './Ouverture'
 import AfricaWebFestivalPage from './AfricaWebFestivalPage'
 import AfricaWeb2019 from './AfricaWeb2019'
 import ActualitesPage from './ActualitesPage'
+import Programme from './Programme'
 import AwfTipsPage from './AwfTipsPage'
 import AwfGame from './AwfGame'
 import AwfTheqPage from './AwfTheqPage'
@@ -47,7 +48,7 @@ const MyDrawerNavigator = createDrawerNavigator({
     initialRouteName:'Accueil',
     headerMode: 'screen',
     contentOptions : {
-        activeTintColor: '#6eccee'
+        activeTintColor: '#6eccde'
     }
 });
 
@@ -63,6 +64,9 @@ const myStackNavigation = createStackNavigator({
     },
     "thequeDetail": {
         screen: ThequeDetail
+    },
+    "programme": {
+        screen: Programme
     },
     "home": {
         screen: MyDrawerNavigator
