@@ -1,6 +1,6 @@
 import React from 'react'
 import {Header} from 'react-native-elements'
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -25,10 +25,33 @@ export default class mapPage extends React.Component{
                     centerComponent={{ text: 'Les speakers', style: { color: '#fff' } }}
                 />
 
-                <View style={styles.AccordionView}>
-                    <Text style={styles.accordionText}>Contact des speakers en cours ...</Text>
-                    <Text style={styles.accordionText}>Revenez plus tard ...</Text>
-                </View>
+            <View>
+                <TouchableOpacity style={styles.item2}>
+                    <View style={{flex:1}}>
+                        <Image
+                            source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'}}
+                            style={{height:60, width:60, borderRadius:'100%'}}
+                        />
+                    </View>
+                    <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
+                        <Text style={{fontSize:17, fontWeight: 'bold'}}>Amy Farha</Text>
+                        <Text style={{fontSize:15,textAlign:'center'}}>Vice President à Université Virtuelle de CI</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.item2}>
+                    <View style={{flex:1}}>
+                        <Image
+                            source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'}}
+                            style={{height:60, width:60, borderRadius:'100%'}}
+                        />
+                    </View>
+                    <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
+                        <Text style={{fontSize:17, fontWeight: 'bold'}}>Chris Jackson</Text>
+                        <Text style={{fontSize:15,textAlign:'center'}}>CEO chez WeenovIT</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
 
             </View>
         )
@@ -38,6 +61,7 @@ export default class mapPage extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor:'#FAF8F8'
     },
     AccordionView: {
         padding: 15,
@@ -47,5 +71,18 @@ const styles = StyleSheet.create({
     },
     accordionText:{
         textAlign: 'center'
-    }
+    },
+    item2: {
+        padding: 10,
+        borderWidth:1,
+        borderColor:'#0a2849',
+        backgroundColor: 'white',
+        fontSize: 18,
+        height: 100,
+        margin:5,
+        borderRadius: 5,
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'center'
+    },
 })

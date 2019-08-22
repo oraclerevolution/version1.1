@@ -8,6 +8,7 @@ import ThematiquesPage from './Partials/ThematiquesPage'
 import EvenementPage from './Partials/EvenementPage'
 import InteretPage from './Partials/InteretPage'
 import ProgrammePage from './Partials/ProgrammePage'
+import Programme from './Programme'
 import mapPage from './Partials/mapPage'
 
 class IconWithBadge extends React.Component {
@@ -52,7 +53,7 @@ export default createAppContainer(
         {
             'Thématiques': { screen: ThematiquesPage },
             'Evènements': { screen: EvenementPage },
-            'Programme': {screen: ProgrammePage},
+            'Programme': {screen: Programme},
             'Intérêt': { screen: InteretPage },
             'Speakers': {screen: mapPage},
         },
