@@ -32,12 +32,12 @@ export default class JeudiPremier extends React.Component{
                             <Buttons
                                 icon={
                                     <Icon
-                                        name="ios-return-left"
+                                        name="ios-menu"
                                         size={25}
                                         color="white"
                                     />
                                 }
-                                onPress={()=> this.props.navigation.navigate('Accueil')}
+                                onPress={()=> this.props.navigation.openDrawer()}
                             />
                     }
                     centerComponent={{ text: 'Jeudi 29 Novembre', style: { color: '#fff', fontSize:18 } }}
