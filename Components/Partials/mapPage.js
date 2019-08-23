@@ -10,6 +10,9 @@ export default class mapPage extends React.Component{
         return(
             <View style={styles.container}>
                 <Header
+                    containerStyle={{
+                        backgroundColor: '#0a2849',
+                    }}
                     leftComponent={
                         <Button
                             icon={
