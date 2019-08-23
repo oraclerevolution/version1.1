@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, ScrollView} from 'react-native';
 import { Button as Buttons } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Header} from 'react-native-elements'
@@ -26,13 +26,24 @@ export default class EvenementPage extends React.Component{
                             onPress={()=>this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Les évènements', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'Les activités spécifiques', style: { color: '#fff' } }}
                 />
 
-                <View style={styles.AccordionView}>
-                    <Text style={styles.accordionText}>Reflexion aux évènements en cours ...</Text>
-                    <Text style={styles.accordionText}>Revenez plus tard ...</Text>
-                </View>
+                <ScrollView style={styles.AccordionView}>
+                    <Text style={styles.accordionText}>Pour cette édition d'Africa Web Festival, nous portons à votre connaissance les activités spécifiques qui auront lieu</Text>
+                        
+                    <View style={styles.thematikStyle}>
+                        <Text style={{textAlign: 'center', color: 'white'}}>Hackhathon</Text>
+                    </View>
+
+                    <View style={styles.thematikStyle}>
+                        <Text style={{textAlign: 'center', color: 'white'}}>Campus AWF</Text>
+                    </View>
+
+                    <View style={styles.thematikStyle}>
+                        <Text style={{textAlign: 'center', color: 'white'}}>programme jeune publique</Text>
+                    </View>
+                </ScrollView>
 
             </View>
         )
@@ -46,10 +57,20 @@ const styles = StyleSheet.create({
     AccordionView: {
         padding: 15,
         flex:1,
-        justifyContent: 'center',
-        alignContent: 'center'
     },
     accordionText:{
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize:16,
+        fontFamily: 'BlissPro-Bold',
+    },
+    thematikStyle:{
+        backgroundColor:'#0a2849',
+        borderWidth: 1,
+        borderColor: 'white',
+        borderRadius: 18,
+        height:45,
+        justifyContent:'center',
+        alignItems: 'center',
+        margin: 10
     }
 })
