@@ -10,8 +10,12 @@ export default class AwfGame extends React.Component{
         return(
             <View style={styles.container}>
                 <Header
+                    containerStyle={{
+                        backgroundColor: '#0a2849',
+                    }}
                     leftComponent={
                         <Buttons
+                            type="clear"
                             icon={
                                 <Icon
                                     name="ios-menu"

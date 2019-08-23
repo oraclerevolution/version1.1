@@ -15,6 +15,7 @@ export default class mapPage extends React.Component{
                     }}
                     leftComponent={
                         <Button
+                            type="clear"
                             icon={
                                 <Icon
                                     name="ios-menu"
@@ -80,7 +81,6 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:'#0a2849',
         backgroundColor: 'white',
-        fontSize: 18,
         height: 100,
         margin:5,
         borderRadius: 5,

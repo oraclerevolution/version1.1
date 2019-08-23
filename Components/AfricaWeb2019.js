@@ -7,8 +7,6 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import ThematiquesPage from './Partials/ThematiquesPage'
 import EvenementPage from './Partials/EvenementPage'
 import InteretPage from './Partials/InteretPage'
-import ProgrammePage from './Partials/ProgrammePage'
-import Programme from './Programme'
 import mapPage from './Partials/mapPage'
 
 class IconWithBadge extends React.Component {
@@ -33,13 +31,10 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
     let iconName;
     if (routeName === 'Thématiques') {
         iconName = `ios-clipboard`;
-
-    } else if (routeName === 'Evènements') {
+    } else if (routeName === 'Activités spécifiques') {
         iconName = `ios-color-filter`;
-    } else if (routeName === 'Intérêt') {
+    } else if (routeName === 'Réseautage') {
         iconName = `ios-create`;
-    } else if(routeName === 'Programme') {
-        iconName = `ios-calendar`;
     } else if(routeName === 'Speakers') {
         iconName = `ios-man`;
     }
@@ -52,9 +47,8 @@ export default createAppContainer(
     createBottomTabNavigator(
         {
             'Thématiques': { screen: ThematiquesPage },
-            'Evènements': { screen: EvenementPage },
-            'Programme': {screen: Programme},
-            'Intérêt': { screen: InteretPage },
+            'Activités spécifiques': { screen: EvenementPage },
+            'Réseautage': { screen: InteretPage },
             'Speakers': {screen: mapPage},
         },
         {

@@ -36,8 +36,12 @@ class ActualitesPage extends React.Component{
         return(
             <View style={{flex:1}}>
                 <Header
+                    containerStyle={{
+                        backgroundColor: '#0a2849',
+                    }}
                     leftComponent={
                         <Button
+                            type="clear"
                             icon={
                                 <Icon
                                     name="ios-menu"
@@ -49,18 +53,6 @@ class ActualitesPage extends React.Component{
                         />
                     }
                     centerComponent={{ text: 'Les actualités', style: { color: '#fff' } }}
-                    rightComponent={
-                        <Button
-                            icon={
-                                <Icon
-                                    name="ios-search"
-                                    size={25}
-                                    color="white"
-                                />
-                            }
-                            onPress={()=>console.log('ok')}
-                        />
-                    }
                 />
 
                     <ScrollView style={styles.scrollview}>

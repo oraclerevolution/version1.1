@@ -14,6 +14,7 @@ export default class AssetExample extends React.Component {
                     }}
                     leftComponent={
                         <Buttons
+                            type="clear"
                             icon={
                                 <Icon
                                     name="ios-menu"
@@ -28,7 +29,7 @@ export default class AssetExample extends React.Component {
                 />
                 <ScrollView style={styles.container}>
                     <Text style={styles.paragraph}>Quoi d'neuf ?</Text>
-                    <Image style={styles.logo} source={require('../assets/logo_awf.png')} />
+                    <Image style={styles.logo} source={{uri: 'https://www.rti.ci/upload/53ab19c48fc69d85f91d763fce1994ff.jpg'}} />
                     <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
                         <Text style={{textAlign:'center',marginBottom:5,fontFamily:'BlissPro-Bold'}}>Africa Web festival vous rassemble pour trois (3) jours de folie dans le monde du numerique</Text>
                         <Button
@@ -43,7 +44,7 @@ export default class AssetExample extends React.Component {
                             <Text style={{fontWeight: 'bold', fontSize:18,fontFamily:'BlissPro-Bold'}}><Icon name="ios-pulse" size={23} color="#0a2849"/> Reseautage</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.item} onPress={()=> this.props.navigation.navigate('programme')} >
+                        <TouchableOpacity style={styles.item}>
                             <Text style={{fontWeight: 'bold', fontSize:18,fontFamily:'BlissPro-Bold'}}><Icon name="ios-grid" size={23} color="#0a2849"/> Programme</Text>
                         </TouchableOpacity>
 
@@ -155,6 +156,5 @@ const styles = StyleSheet.create({
         width: 320,
         margin:10,
         alignSelf:'center',
-        borderWidth:1
     }
 });

@@ -31,6 +31,7 @@ export default class VendrediDeuxieme extends React.Component{
                     }}
                     leftComponent={
                         <Buttons
+                            type="clear"
                             icon={
                                 <Icon
                                     name="ios-menu"

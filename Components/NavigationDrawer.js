@@ -1,7 +1,6 @@
 import { createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation'
 
 import Ouverture from './Ouverture'
-import AfricaWebFestivalPage from './AfricaWebFestivalPage'
 import AfricaWeb2019 from './AfricaWeb2019'
 import ActualitesPage from './ActualitesPage'
 import Programme from './Programme'
@@ -22,9 +21,6 @@ const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
         screen: Ouverture,
     },
-    'Africa Web Festival': {
-        screen: AfricaWebFestivalPage
-    },
     'AWF 2019': {
         screen: AfricaWeb2019
     },
@@ -34,13 +30,10 @@ const MyDrawerNavigator = createDrawerNavigator({
     'Les actualités': {
         screen: ActualitesPage
     },
-    'AWF Tips': {
-        screen: AwfTipsPage
-    },
     'AWF Fun': {
         screen: AwfGame
     },
-    'AWF Thèque': {
+    'Rétrospective': {
         screen: AwfTheqPage
     },
     'Authentification': {

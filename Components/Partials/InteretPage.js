@@ -1,7 +1,6 @@
-import React from 'react'
-import {Header} from 'react-native-elements'
-import {StyleSheet, View, Button, Text, Alert, TouchableOpacity} from 'react-native';
-import {TextInput} from 'react-native-paper';
+import React from 'react';
+import {Header} from 'react-native-elements';
+import {StyleSheet, View, Button, Text, Alert,TextInput,Picker, TouchableOpacity} from 'react-native';
 import Textarea from 'react-native-textarea';
 import { Button as Buttons } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -13,6 +12,7 @@ export default class InteretPage extends React.Component{
         this.state = {
             name: '',
             email: '',
+            type: '',
             sujet: '',
             message: '',
         };
@@ -59,11 +59,16 @@ export default class InteretPage extends React.Component{
     }
 
     render(){
+        const options = [{ value: 0, label: '0' }]
         return(
             <View style={styles.container}>
                 <Header
+                    containerStyle={{
+                        backgroundColor: '#0a2849',
+                    }}
                     leftComponent={
                         <Buttons
+                            type="clear"
                             icon={
                                 <Icon
                                     name="ios-menu"
@@ -81,21 +86,35 @@ export default class InteretPage extends React.Component{
                         <Text style={styles.title}>Exprimez votre intérêt pour AWF2019</Text>
 
                         <TextInput
-                            label='Nom et prénoms'
+                            placeholder='Nom et prénoms'
                             value={this.state.name}
                             style={styles.champ}
                             onChangeText={name => this.setState({ name })}
                         />
 
                         <TextInput
-                            label='Votre email'
+                            placeholder='Votre email'
                             value={this.state.email}
                             style={styles.champ}
                             onChangeText={email => this.setState({ email })}
                         />
 
+                        <View>
+                            <Picker
+                                selectedValue={this.state.type}
+                                style={styles.selectInput}
+                                onValueChange={(itemValue, itemIndex) =>
+                                    this.setState({type: itemValue})
+                                }>
+                                <Picker.Item label="Choisissez un type de réseautage" value="" />
+                                <Picker.Item label="Salle B2B" value="1" />
+                                <Picker.Item label="LES JARDINS DES RENCONTRES B2B" value="2"/>
+                                <Picker.Item label="CAFE-BIZ" value="3"/>
+                            </Picker>
+                        </View>
+
                         <TextInput
-                            label='Sujet'
+                            placeholder='Sujet'
                             value={this.state.sujet}
                             style={styles.champ}
                             onChangeText={sujet => this.setState({ sujet })}
@@ -129,6 +148,12 @@ const styles = StyleSheet.create({
         flex:1,
         padding: 15,
     },
+    selectInput: {
+        height: 40,
+        borderBottomWidth:1,
+        borderWidth:0,
+        margin: 10,
+    },
     title: {
         textAlign: 'center',
         fontWeight: 'bold',
@@ -136,7 +161,10 @@ const styles = StyleSheet.create({
         marginBottom:16,
     },
     champ: {
-        marginBottom: 10
+        margin: 10,
+        borderBottomWidth:1,
+        padding:6,
+        height:40
     },
     textareaContainer:{
         height:180,
