@@ -27,10 +27,10 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
     const { routeName } = navigation.state;
     let IconComponent = Ionicons;
     let iconName;
-    if (routeName === 'Thématiques') {
-        iconName = `ios-clipboard`;
-    } else if (routeName === 'Activités spécifiques') {
-        iconName = `ios-color-filter`;
+    if (routeName === 'Pays participants') {
+        iconName = `ios-globe`;
+    } else if (routeName === 'Popularité de AWF') {
+        iconName = `ios-people`;
     } 
 
     // You can return any component that you like here!
@@ -40,8 +40,8 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
 export default createAppContainer(
     createBottomTabNavigator(
         {
-            'Thématiques': { screen: Retrofile1 },
-            'Activités spécifiques': { screen: Retrofile2 },
+            'Pays participants': { screen: Retrofile1 },
+            'Popularité de AWF': { screen: Retrofile2 },
         },
         {
             defaultNavigationOptions: ({ navigation }) => ({

@@ -28,6 +28,33 @@ export default class Retrofile1 extends React.Component{
                 />
                 <View style={styles.container}>
                     <Text style={styles.title}>DECLOISONNER LES PAYS ET ENTAMER LA CREATION D'UN ÉCOSYSTEME D'INNOVATION NUMÉRIQUE CONTINENTAL</Text>
+                    <View>
+
+                        <Text style={styles.titlestyle}>NOMBRE DE PAYS AFRICAINS:</Text>
+                        <Text>2014: 19</Text>
+                        <Text>2015: 25</Text>
+                        <Text>2016: 24</Text>
+                        <Text>2017: 26</Text>
+                        <Text>2018: 31</Text>
+                    </View>
+
+                    <View>
+
+                        <Text style={styles.titlestyle}>NOMBRE D'INTERVENANTS ET EXPERTS DE CONTENUS AFRICAINS MOBILISÉS:</Text>
+                        <Text>2014: 40</Text>
+                        <Text>2015: 50</Text>
+                        <Text>2016: 57</Text>
+                        <Text>2017: 55</Text>
+                        <Text>2018: 61</Text>
+                    </View>
+
+                    <View>
+
+                        <Text style={styles.titlestyle}>LES PAYS PRESENTS AU FESTIVAL:</Text>
+                        <Text>GABON, MALI, MADAGASCAR, NIGERIA, TOGO, MAROC, MAURITANIE, BÉNIN, NIGER, ILE MAURICE, TCHAD, GNAHA, BURKINA FASO, SENEGAL, CAMÉROUN, CONGO BRAZZAVILLE, RDC, KENYA, CENTRAFIQUE, GUINÉE, TUNISIE, ALGERIE, RWANDA</Text>
+                    </View>
+                    
+
                 </View>
             </View>
             
@@ -38,13 +65,21 @@ export default class Retrofile1 extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         padding:16
     },
     title: {
         textAlign:'center',
         fontFamily: 'BlissPro-Bold',
-        fontSize: 18
+        fontSize: 18,
+        marginBottom: 15,
+        textAlign: 'center'
+    },
+    titlestyle:{
+        marginTop: 15,
+        fontWeight: 'bold',
+        fontSize: 15,
+        textAlign: 'left',
+        fontFamily: 'BlissPro-Bold'
     }
+
 })
