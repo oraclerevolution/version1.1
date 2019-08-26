@@ -1,53 +1,57 @@
-import React from 'react'
-import {View, Text, StyleSheet, FlatList, ScrollView, ActivityIndicator} from 'react-native'
-import ThequeItem from './Partials/ThequeItem'
-import { Button as Buttons } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {Header} from 'react-native-elements'
+// You can import Ionicons from @expo/vector-icons if you use Expo or
+// react-native-vector-icons/Ionicons otherwise.
+import React from 'react';
+import {View} from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import Retrofile1 from './Partials/Retrofile1'
+import Retrofile2 from './Partials/Retrofile2'
 
-export default class AwfTheqPage extends React.Component{
-
-    constructor(){
-        super()
-    }
-
+class IconWithBadge extends React.Component {
     render() {
-        return(
-            <View style={styles.container}>
-                <Header
-                    containerStyle={{
-                        backgroundColor: '#0a2849',
-                    }}
-                    leftComponent={
-                        <Buttons
-                            type="clear"
-                            icon={
-                                <Icon
-                                    name="ios-menu"
-                                    size={25}
-                                    color="white"
-                                />
-                            }
-                            onPress={()=>this.props.navigation.openDrawer()}
-                        />
-                    }
-                    centerComponent={{ text: 'La rétrospective', style: { color: '#fff' } }}
-                />
-                <View style={styles.viewTheque}>
-                    <Text>Bibliothèque AWF pas encore disponible ...</Text>
-                </View>
+        const { name, color, size } = this.props;
+        return (
+            <View style={{ width: 24, height: 24, margin: 5 }}>
+                <Ionicons name={name} size={size} color={color} />
             </View>
-        )
+        );
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex:1,
-    },
-    viewTheque: {
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
+const HomeIconWithBadge = props => {
+    // You should pass down the badgeCount in some other ways like context, redux, mobx or event emitters.
+    return <IconWithBadge />;
+};
+
+const getTabBarIcon = (navigation, focused, tintColor) => {
+    const { routeName } = navigation.state;
+    let IconComponent = Ionicons;
+    let iconName;
+    if (routeName === 'Thématiques') {
+        iconName = `ios-clipboard`;
+    } else if (routeName === 'Activités spécifiques') {
+        iconName = `ios-color-filter`;
+    } 
+
+    // You can return any component that you like here!
+    return <IconComponent name={iconName} size={25} color={tintColor} />;
+};
+
+export default createAppContainer(
+    createBottomTabNavigator(
+        {
+            'Thématiques': { screen: Retrofile1 },
+            'Activités spécifiques': { screen: Retrofile2 },
+        },
+        {
+            defaultNavigationOptions: ({ navigation }) => ({
+                tabBarIcon: ({ focused, tintColor }) =>
+                    getTabBarIcon(navigation, focused, tintColor),
+            }),
+            tabBarOptions: {
+                activeTintColor: '#0a2849',
+                inactiveTintColor: 'gray',
+            },
+        }
+    )
+);
