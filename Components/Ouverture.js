@@ -5,6 +5,17 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class AssetExample extends React.Component {
 
+    constructor(){
+        super()
+        this.state = {
+            clique: 0
+        }
+        this.goToTicketPage = this.goToTicketPage.bind(this)
+    }
+    goToTicketPage(){
+        this.props.navigation.navigate('ticket')
+    }
+
     render() {
         return (
             <View style={{flex:1}}>
@@ -29,12 +40,17 @@ export default class AssetExample extends React.Component {
                 />
                 <ScrollView style={styles.container}>
                     <Text style={styles.paragraph}>Quoi d'neuf ?</Text>
-                    <Image style={styles.logo} source={{uri: 'https://www.rti.ci/upload/53ab19c48fc69d85f91d763fce1994ff.jpg'}} />
+                    <Image style={styles.logo} source={{uri: 'http://img.over-blog-kiwi.com/2/49/57/72/20181026/ob_f8f16f_africa-web-festival-1.jpg'}} />
                     <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
                         <Text style={{textAlign:'center',marginBottom:5,fontFamily:'BlissPro-Bold'}}>Africa Web festival vous rassemble pour trois (3) jours de folie dans le monde du numerique</Text>
                         <Button
                             title="prends ton ticket"
-                            onPress={()=>console.log('ok')}
+                            onPress={()=>{
+                                let numberOne = parseInt(1)
+                                this.setState({clique: this.state.clique + 1})
+                                this.goToTicketPage()
+                                console.log(`${this.state.clique} click`)
+                            }}
                         />
                     </View>
 

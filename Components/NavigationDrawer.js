@@ -16,6 +16,7 @@ import ConnexionPage from './ConnexionPage'
 import InscriptionPage from './InscriptionPage'
 import Congratulations from './Congratulations'
 import InteretPage from './Partials/InteretPage'
+import TicketPage from './TicketPage'
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -69,6 +70,9 @@ const myStackNavigation = createStackNavigator({
     },
     "felicitation": {
         screen: Congratulations
+    },
+    "ticket": {
+        screen: TicketPage
     },
     "connexion": {
         screen: ConnexionPage

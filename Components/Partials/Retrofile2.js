@@ -51,7 +51,7 @@ export default class Retrofile2 extends React.Component{
 
                     <View>
 
-                        <Text style={styles.titlestyle}>ÉLÈVES & ÉTUDIANTS:</Text>
+                        <Text style={styles.titlestyle}>ÉLÈVES ET ÉTUDIANTS:</Text>
                         <Text>2014: 2800</Text>
                         <Text>2015: 3162</Text>
                         <Text>2016: 3531</Text>
