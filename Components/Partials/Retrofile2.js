@@ -78,6 +78,26 @@ export default class Retrofile2 extends React.Component{
                         <Text>2017: 35</Text>
                         <Text>2018: 106</Text>
                     </View>
+
+                    <View>
+
+                        <Text style={styles.titlestyle}>NOMBRE D'INNOVATIONS TECHNOLOGIQUES DEVELOPEES PAR LES PARTICIPANTS:</Text>
+                        <Text>2014: 6</Text>
+                        <Text>2015: 8</Text>
+                        <Text>2016: 8</Text>
+                        <Text>2017: 11</Text>
+                        <Text>2018: 35</Text>
+                    </View>
+
+                    <View>
+
+                        <Text style={styles.titlestyle}>NOMBRE DE PRODUCTIONS AUDIOVISUELLES NUMERIQUES DEVELOPPEES:</Text>
+                        <Text>2014: 105</Text>
+                        <Text>2015: 101</Text>
+                        <Text>2016: 50</Text>
+                        <Text>2017: 47</Text>
+                        <Text>2018: 40</Text>
+                    </View>
                 </ScrollView>
             </View>
         )
