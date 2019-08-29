@@ -46,35 +46,53 @@ class ActualiteDetail extends React.Component {
         const {article} = this.state
         if(article != undefined){
             return(
-                <ScrollView style={styles.scrollview_container}>
-                    <Text style={styles.text_title}>{article.title}</Text>
-                    <Image
-                        style={styles.image}
-                        source={{uri:this.getImageFromApi(article.photo)}}
+                <View style={{flex:1}}>
+                    <Header
+                        containerStyle={{
+                            backgroundColor: '#0a2849',
+                        }}
+                        leftComponent={
+                            <TouchableOpacity>
+                                <Text style={{color:'white'}} onPress={()=>this.props.navigation.goBack()}>Retour</Text>
+                            </TouchableOpacity>
+                        }
+                        centerComponent={
+                            <Text style={{color: '#fff'}}>
+                                {article.title}
+                            </Text>
+                        }
                     />
-                    <View style={{padding:7}}>
-                        <Text style={styles.article}>{article.article}</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity style={{width:200, alignSelf:'center'}}>
-                            <Buttons
-                            icon={
-                                <Icon
-                                    name="logo-facebook"
-                                    size={25}
-                                    color="white"
-                                />
-                            }
-                            title="  Partager sur facebook"
-                            onPress={()=>console.log('ok')}
+                    <ScrollView style={styles.scrollview_container}>
+                        <Text style={styles.text_title}>{article.title}</Text>
+                        <Image
+                            style={styles.image}
+                            source={{uri:this.getImageFromApi(article.photo)}}
                         />
-                        </TouchableOpacity>
-                    </View>
-                    <View>
-                        <Text style={{fontWeight: 'bold', textAlign :'center', fontSize: 23, marginTop: 15, marginBottom:10}}>Commentaires</Text>
-                        <Text style={{color: 'gray', textAlign: 'center'}}>Pas de commentaire</Text>
-                    </View>
-                </ScrollView>
+                        <View style={{padding:7}}>
+                            <Text style={styles.article}>{article.article}</Text>
+                        </View>
+                        <View>
+                            <TouchableOpacity style={{width:200, alignSelf:'center'}}>
+                                <Buttons
+                                icon={
+                                    <Icon
+                                        name="logo-facebook"
+                                        size={25}
+                                        color="white"
+                                    />
+                                }
+                                title="  Partager sur facebook"
+                                onPress={()=>console.log('ok')}
+                            />
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <Text style={{fontWeight: 'bold', textAlign :'center', fontSize: 23, marginTop: 15, marginBottom:10}}>Commentaires</Text>
+                            <Text style={{color: 'gray', textAlign: 'center'}}>Pas de commentaire</Text>
+                        </View>
+                    </ScrollView>
+                </View>
+                
             )
         }
     }
@@ -83,17 +101,6 @@ class ActualiteDetail extends React.Component {
     render() {
         return (
             <View style={styles.main_container}>
-                <Header
-                     containerStyle={{
-                        backgroundColor: '#0a2849',
-                    }}
-                    leftComponent={
-                        <TouchableOpacity>
-                            <Text style={{color:'white'}} onPress={()=>this.props.navigation.goBack()}>Retour</Text>
-                        </TouchableOpacity>
-                    }
-                    centerComponent={{ text: "Détail de l'article", style: { color: '#fff' } }}
-                />
                 <View style={styles.vueDetail}>
                     {this._displayLoading()}
                     {this._displayArticle()}
