@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 export default class Retrofile2 extends React.Component{
     render(){
         return(
-            <View>
+            <View style={{flex:1}}>
                 <Header
                     containerStyle={{
                         backgroundColor: '#0a2849',
