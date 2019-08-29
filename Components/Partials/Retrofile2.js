@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign:'center',
-        fontFamily: 'BlissPro-Bold',
         fontSize: 18,
         marginBottom: 15,
         textAlign: 'center'
@@ -121,6 +120,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
         textAlign: 'left',
-        fontFamily: 'BlissPro-Bold'
     }
 })

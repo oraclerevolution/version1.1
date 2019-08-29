@@ -83,7 +83,7 @@ export default class AssetExample extends React.Component {
                     </View>
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Informations pratiques</Text>
                     <View style={{marginBottom:20}}>
-                        <TouchableOpacity style={styles.item2}>
+                        <View style={styles.item2}>
                             <View style={{flex:2}}>
                                 <Image
                                     style={{height:80,width:90, borderRadius:5}}
@@ -92,9 +92,9 @@ export default class AssetExample extends React.Component {
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
                                 <Text style={{fontSize:19, fontWeight: 'bold'}}>De 08h à 17h</Text>
                             </View>
-                        </TouchableOpacity>
+                        </View >
 
-                        <TouchableOpacity style={styles.item2}>
+                        <View  style={styles.item2}>
                             <View style={{flex:2}}>
                                 <Image
                                     style={{height:80,width:90, borderRadius:5}}
@@ -104,9 +104,9 @@ export default class AssetExample extends React.Component {
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
                                 <Text style={{fontSize:19, fontWeight: 'bold'}}>De 08h à 17h</Text>
                             </View>
-                        </TouchableOpacity>
+                        </View >
 
-                        <TouchableOpacity style={styles.item2}>
+                        <View  style={styles.item2}>
                             <View style={{flex:2}}>
                                 <Image
                                     style={{height:80,width:90, borderRadius:5}}
@@ -116,7 +116,7 @@ export default class AssetExample extends React.Component {
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
                                 <Text style={{fontSize:19, fontWeight: 'bold'}}>De 08h à 17h</Text>
                             </View>
-                        </TouchableOpacity>
+                        </View >
                     </View>
 
                 </ScrollView>

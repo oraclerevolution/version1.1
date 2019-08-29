@@ -1,6 +1,6 @@
 import React from 'react'
 import {Header} from 'react-native-elements'
-import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -29,12 +29,12 @@ export default class mapPage extends React.Component{
                     centerComponent={{ text: 'Les speakers', style: { color: '#fff' } }}
                 />
 
-            <View>
-                <TouchableOpacity style={styles.item2}>
+            <ScrollView style={{flex:1}}>
+                <TouchableOpacity style={styles.item2} onPress={()=>this.props.navigation.navigate('detail-speaker')}>
                     <View style={{flex:1}}>
                         <Image
                             source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'}}
-                            style={{height:60, width:60, borderRadius:'100%'}}
+                            style={{height:60, width:60}}
                         />
                     </View>
                     <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
@@ -47,7 +47,7 @@ export default class mapPage extends React.Component{
                     <View style={{flex:1}}>
                         <Image
                             source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'}}
-                            style={{height:60, width:60, borderRadius:'100%'}}
+                            style={{height:60, width:60}}
                         />
                     </View>
                     <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
@@ -55,7 +55,7 @@ export default class mapPage extends React.Component{
                         <Text style={{fontSize:15,textAlign:'center'}}>CEO chez WeenovIT</Text>
                     </View>
                 </TouchableOpacity>
-            </View>
+            </ScrollView>
 
             </View>
         )
@@ -65,7 +65,7 @@ export default class mapPage extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:'#FAF8F8'
+        backgroundColor:'#fff'
     },
     AccordionView: {
         padding: 15,
@@ -80,8 +80,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderWidth:1,
         borderColor:'#0a2849',
-        backgroundColor: 'white',
-        height: 100,
+        backgroundColor: '#efefef',
+        height: 90,
         margin:5,
         borderRadius: 5,
         flex:1,

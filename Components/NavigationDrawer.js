@@ -13,6 +13,7 @@ import InscriptionPage from './InscriptionPage'
 import Congratulations from './Congratulations'
 import InteretPage from './Partials/InteretPage'
 import TicketPage from './TicketPage'
+import SpeakerDetail from './SpeakerDetail'
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -75,6 +76,9 @@ const myStackNavigation = createStackNavigator({
     },
     "connex": {
         screen: Authentication
+    },
+    "detail-speaker":{
+        screen: SpeakerDetail
     }
 },{
     initialRouteName: 'home',

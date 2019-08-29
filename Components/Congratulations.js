@@ -7,6 +7,9 @@ export default class Congratulations extends React.Component{
         return(
             <View style={styles.container_view}>
                 <Header
+                    containerStyle={{
+                        backgroundColor: '#0a2849',
+                    }}
                     centerComponent={{ text: 'Félicitations', style: { color: '#fff' } }}
                 />
                 <View style={{flex:1,justifyContent: 'center', alignItems: 'center', padding:10}}>
