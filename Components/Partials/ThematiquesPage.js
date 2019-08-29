@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
     accordionText:{
         textAlign: 'center',
         fontSize:16,
-        fontFamily: 'BlissPro-Bold',
     },
     thematikStyle:{
         backgroundColor:'#0a2849',
