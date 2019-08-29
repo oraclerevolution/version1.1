@@ -4,14 +4,10 @@ import Ouverture from './Ouverture'
 import AfricaWeb2019 from './AfricaWeb2019'
 import ActualitesPage from './ActualitesPage'
 import Programme from './Programme'
-import AwfTipsPage from './AwfTipsPage'
 import AwfGame from './AwfGame'
 import AwfTheqPage from './AwfTheqPage'
 import Authentication from './Authentication'
-//import ProfilPage from './ProfilPage'
 import ActualiteDetail from './ActualiteDetail'
-import TipsDetail from './TipsDetail'
-import ThequeDetail from './ThequeDetail'
 import ConnexionPage from './ConnexionPage'
 import InscriptionPage from './InscriptionPage'
 import Congratulations from './Congratulations'
@@ -55,12 +51,6 @@ const myStackNavigation = createStackNavigator({
     },
     'Accueil': {
         screen: Ouverture,
-    },
-    "tipsDetail": {
-        screen: TipsDetail
-    },
-    "thequeDetail": {
-        screen: ThequeDetail
     },
     "programme": {
         screen: Programme
