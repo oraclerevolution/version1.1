@@ -81,10 +81,17 @@ class ActualiteDetail extends React.Component {
 
 
     render() {
-        console.log(this.props.navigation);
         return (
             <View style={styles.main_container}>
                 <Header
+                     containerStyle={{
+                        backgroundColor: '#0a2849',
+                    }}
+                    leftComponent={
+                        <TouchableOpacity>
+                            <Text style={{color:'white'}} onPress={()=>this.props.navigation.goBack()}>Retour</Text>
+                        </TouchableOpacity>
+                    }
                     centerComponent={{ text: "Détail de l'article", style: { color: '#fff' } }}
                 />
                 <View style={styles.vueDetail}>
