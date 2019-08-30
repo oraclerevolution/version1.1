@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, Button, StyleSheet, TextInput, KeyboardAvoidingView, Image, TouchableOpacity} from 'react-native'
+import {View, Text, Button, StyleSheet, TextInput, KeyboardAvoidingView, Image, TouchableOpacity, ImageBackground} from 'react-native'
 import {Button as Buttons, Header} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -36,33 +36,36 @@ export default class ConnexionPage extends React.Component{
                   centerComponent={{ text: 'Connectez-vous', style: { color: '#fff' } }}
               />
               <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
-                  <Image
-                    source={require('../assets/logo_awf.png')}
-                    style={styles.strech}
-                  />
-                  <Text style={{fontSize:22,fontWeight:'bold'}}>Connectez-vous</Text>
-
-                  <TextInput
-                      placeholder='numéro de telephone'
-                      value={this.state.id_username}
-                      style={styles.champ}
-                      onChangeText={id_username => this.setState({ id_username })}
-                  />
-
-                  <TextInput
-                      placeholder='mot de passe'
-                      value={this.state.password}
-                      style={styles.champ}
-                      secureTextEntry={true}
-                      onChangeText={password => this.setState({ password })}
-                  />
-
-                  <TouchableOpacity style={styles.btn_soumettre}>
-                      <Button
-                          title={"Connexion"}
-                          onPress={()=>console.log('ok')}
+                  <ImageBackground source={require('../assets/login.jpg')} style={{width: '100%', height: '100%', flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                      <Image
+                          source={require('../assets/logo_awf.png')}
+                          style={styles.strech}
                       />
-                  </TouchableOpacity>
+                      <Text style={{fontSize:22,fontWeight:'bold', color:'white'}}>Connectez-vous</Text>
+                      <TextInput
+                          placeholder='numéro de telephone'
+                          value={this.state.id_username}
+                          style={styles.champ}
+                          onChangeText={id_username => this.setState({ id_username })}
+                      />
+
+                      <TextInput
+                          placeholder='mot de passe'
+                          value={this.state.password}
+                          style={styles.champ}
+                          secureTextEntry={true}
+                          onChangeText={password => this.setState({ password })}
+                      />
+
+                      <TouchableOpacity style={styles.btn_soumettre}>
+                          <Button
+                              title={"Connexion"}
+                              onPress={()=>console.log('ok')}
+                          />
+                      </TouchableOpacity>
+                      <Text style={{color:'white', fontStyle:'italic'}}>Si vous n'avez pas de compte ? Inscrivez-vous !</Text>
+                  </ImageBackground>
+
                   
               </KeyboardAvoidingView>
           </View>
@@ -82,6 +85,7 @@ const styles = StyleSheet.create({
     strech: {
         width: 110,
         height: 110,
+        marginBottom:15
     },
     champ: {
         margin: 10,
@@ -90,6 +94,7 @@ const styles = StyleSheet.create({
         width:250
     },
     btn_soumettre: {
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 25
     }
 })

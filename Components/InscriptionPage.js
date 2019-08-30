@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, Button, TextInput, StyleSheet, KeyboardAvoidingView, Image, TouchableOpacity} from 'react-native'
+import {View, Text, Button, TextInput, StyleSheet, KeyboardAvoidingView, Image, TouchableOpacity, ImageBackground} from 'react-native'
 import {Button as Buttons, Header} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -57,40 +57,44 @@ export default class InscriptionPage extends React.Component{
                     centerComponent={{ text: 'Inscrivez-vous', style: { color: '#fff' } }}
                 />
                 <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
-                    <Image
-                        source={require('../assets/logo_awf.png')}
-                        style={styles.strech}
-                    />
-                    <Text style={{fontSize:22,fontWeight:'bold'}}>Inscrivez-vous</Text>
-
-                    <TextInput
-                        placeholder="nom d'utilisateur"
-                        value={this.state.username}
-                        style={styles.champ}
-                        onChangeText={username => this.setState({ username })}
-                    />
-
-                    <TextInput
-                        placeholder="numero de telephone"
-                        value={this.state.numero}
-                        style={styles.champ}
-                        onChangeText={numero => this.setState({ numero })}
-                    />
-
-                    <TextInput
-                        placeholder='mot de passe'
-                        value={this.state.password}
-                        style={styles.champ}
-                        secureTextEntry={true}
-                        onChangeText={password => this.setState({ password })}
-                    />
-
-                    <TouchableOpacity style={styles.btn_soumettre}>
-                        <Button
-                            title={"Inscription"}
-                            onPress={()=>this._register()}
+                    <ImageBackground source={require('../assets/login.jpg')} style={{width: '100%', height: '100%', flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                        <Image
+                            source={require('../assets/logo_awf.png')}
+                            style={styles.strech}
                         />
-                    </TouchableOpacity>
+                        <Text style={{fontSize:22,fontWeight:'bold'}}>Inscrivez-vous</Text>
+
+                        <TextInput
+                            placeholder="nom d'utilisateur"
+                            value={this.state.username}
+                            style={styles.champ}
+                            onChangeText={username => this.setState({ username })}
+                        />
+
+                        <TextInput
+                            placeholder="numero de telephone"
+                            value={this.state.numero}
+                            style={styles.champ}
+                            onChangeText={numero => this.setState({ numero })}
+                        />
+
+                        <TextInput
+                            placeholder='mot de passe'
+                            value={this.state.password}
+                            style={styles.champ}
+                            secureTextEntry={true}
+                            onChangeText={password => this.setState({ password })}
+                        />
+
+                        <TouchableOpacity style={styles.btn_soumettre}>
+                            <Button
+                                title={"Inscription"}
+                                onPress={()=>this._register()}
+                            />
+                        </TouchableOpacity>
+
+                        <Text style={{color:'white', fontStyle:'italic'}}>Vous avez déjà un compte ? connectez-vous !</Text>
+                    </ImageBackground>
 
                 </KeyboardAvoidingView>
             </View>
@@ -110,6 +114,7 @@ const styles = StyleSheet.create({
     strech: {
         width: 110,
         height: 110,
+        marginBottom: 15
     },
     champ: {
         margin: 10,
@@ -118,6 +123,7 @@ const styles = StyleSheet.create({
         width:250
     },
     btn_soumettre: {
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 25
     }
 })
