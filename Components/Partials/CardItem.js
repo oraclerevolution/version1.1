@@ -16,7 +16,7 @@ export default class CardItem extends Component {
         return (
                 <Card
                     title={actualite.title}
-                    image={{uri: this.getImageFromApi(actualite.photo)}}>
+                    image={require('../../assets/actu1.png')}>
                     <Text style={{marginBottom: 10}}>
                         {actualite.preview}
                     </Text>

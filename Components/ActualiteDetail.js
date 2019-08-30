@@ -63,33 +63,15 @@ class ActualiteDetail extends React.Component {
                         }
                     />
                     <ScrollView style={styles.scrollview_container}>
-                        <Text style={styles.text_title}>{article.title}</Text>
                         <Image
                             style={styles.image}
-                            source={{uri:this.getImageFromApi(article.photo)}}
+                            source={require('../assets/actu1.png')}
                         />
                         <View style={{padding:7}}>
                             <Text style={styles.article}>{article.article}</Text>
+                            <Text style={{fontWeight:'bold', textAlign:'left'}}>Posté le 28.03.2019</Text>
                         </View>
-                        <View>
-                            <TouchableOpacity style={{width:200, alignSelf:'center'}}>
-                                <Buttons
-                                icon={
-                                    <Icon
-                                        name="logo-facebook"
-                                        size={25}
-                                        color="white"
-                                    />
-                                }
-                                title="  Partager sur facebook"
-                                onPress={()=>console.log('ok')}
-                            />
-                            </TouchableOpacity>
-                        </View>
-                        <View>
-                            <Text style={{fontWeight: 'bold', textAlign :'center', fontSize: 23, marginTop: 15, marginBottom:10}}>Commentaires</Text>
-                            <Text style={{color: 'gray', textAlign: 'center'}}>Pas de commentaire</Text>
-                        </View>
+
                     </ScrollView>
                 </View>
                 
@@ -125,12 +107,12 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     image: {
-        width: '100%',
-        height: 200,
+        width: '95%',
+        height: 250,
         marginBottom: 15,
         marginTop: 8,
-        borderWidth:1,
-        borderColor: 'black'
+        borderColor: 'black',
+        alignSelf:'center'
     },
     article: {
         fontSize: 18,
