@@ -42,7 +42,7 @@ export default class AssetExample extends React.Component {
                     <Text style={styles.paragraph}>Quoi d'neuf ?</Text>
                     <Image style={styles.logo} source={{uri: 'http://img.over-blog-kiwi.com/2/49/57/72/20181026/ob_f8f16f_africa-web-festival-1.jpg'}} />
                     <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
-                        <Text style={{textAlign:'center',marginBottom:5}}>Africa Web festival vous rassemble pour trois (3) jours de folie dans le monde du numerique</Text>
+                        <Text style={{textAlign:'center',marginBottom:5, fontWeight:'bold'}}>Africa Web festival vous rassemble les 21, 22 et 23 Novembre pour trois (3) jours de folie dans le monde du numerique</Text>
                         <Button
                             title="prends ton ticket"
                             onPress={()=>{
@@ -54,7 +54,7 @@ export default class AssetExample extends React.Component {
                         />
                     </View>
 
-                    <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Explorez</Text>
+                    <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Découvrez</Text>
                     <View>
                         <TouchableOpacity style={styles.item}>
                             <Text style={{fontWeight: 'bold', fontSize:18}}><Icon name="ios-pulse" size={23} color="#0a2849"/> Reseautage</Text>

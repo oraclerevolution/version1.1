@@ -62,7 +62,7 @@ export default class InscriptionPage extends React.Component{
                             source={require('../assets/logo_awf.png')}
                             style={styles.strech}
                         />
-                        <Text style={{fontSize:22,fontWeight:'bold'}}>Inscrivez-vous</Text>
+                        <Text style={{fontSize:22,fontWeight:'bold', color:'white'}}>Inscrivez-vous</Text>
 
                         <TextInput
                             placeholder="nom d'utilisateur"

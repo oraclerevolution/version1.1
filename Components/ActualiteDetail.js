@@ -69,9 +69,8 @@ class ActualiteDetail extends React.Component {
                         />
                         <View style={{padding:7}}>
                             <Text style={styles.article}>{article.article}</Text>
-                            <Text style={{fontWeight:'bold', textAlign:'left'}}>Posté le 28.03.2019</Text>
+                            <Text style={{fontWeight:'bold', textAlign:'left',marginTop:10}}>Posté le 28.03.2019</Text>
                         </View>
-
                     </ScrollView>
                 </View>
                 
