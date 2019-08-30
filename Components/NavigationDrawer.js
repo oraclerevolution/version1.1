@@ -1,10 +1,10 @@
-import { createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation'
-
+import React from 'react'
+import { createStackNavigator, createDrawerNavigator, createAppContainer, DrawerItems} from 'react-navigation'
+import {SafeAreaView, ScrollView, View, Dimensions, Image} from 'react-native'
 import Ouverture from './Ouverture'
 import AfricaWeb2019 from './AfricaWeb2019'
 import ActualitesPage from './ActualitesPage'
 import Programme from './Programme'
-import AwfGame from './AwfGame'
 import AwfTheqPage from './AwfTheqPage'
 import Authentication from './Authentication'
 import ActualiteDetail from './ActualiteDetail'
@@ -14,6 +14,20 @@ import Congratulations from './Congratulations'
 import InteretPage from './Partials/InteretPage'
 import TicketPage from './TicketPage'
 import SpeakerDetail from './SpeakerDetail'
+
+const CustomDrawerComponent = (props) => (
+    <SafeAreaView style={{flex:1}}>
+        <View style={{height:200, backgroundColor:'#0a2849', alignItems:'center', justifyContent:'center'}}>
+            <Image
+                source={require('../assets/logo_awf.png')}
+                style={{height:120, width:120, borderRadius:70}}
+            />
+        </View>
+        <ScrollView>
+            <DrawerItems {...props}/>
+        </ScrollView>
+    </SafeAreaView>
+)
 
 const MyDrawerNavigator = createDrawerNavigator({
     'Accueil': {
@@ -28,9 +42,6 @@ const MyDrawerNavigator = createDrawerNavigator({
     'Les actualités': {
         screen: ActualitesPage
     },
-    'AWF Fun': {
-        screen: AwfGame
-    },
     'Rétrospective': {
         screen: AwfTheqPage
     },
@@ -43,7 +54,8 @@ const MyDrawerNavigator = createDrawerNavigator({
     headerMode: 'screen',
     contentOptions : {
         activeTintColor: '#6eccde'
-    }
+    },
+    contentComponent: CustomDrawerComponent
 });
 
 const myStackNavigation = createStackNavigator({

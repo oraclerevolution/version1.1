@@ -17,11 +17,11 @@ export default class TicketPage extends React.Component{
                             <Text style={{color:'white'}} onPress={()=>this.props.navigation.goBack()}>Retour</Text>
                         </TouchableOpacity>
                     }
-                    centerComponent={{ text: 'Recuperer vos tickets', style: { color: '#fff', fontSize:18, fontFamily:'BlissPro-Bold' } }}
+                    centerComponent={{ text: 'Recuperer vos tickets', style: { color: '#fff', fontSize:18,} }}
                 />
                 <Web
                     source={{ uri: 'https://google.com' }}
-                    style={{borderWidth:1, flex:1, width: '100%'}}
+                    style={{flex:1, width: '100%'}}
                 />
             </View>
             
