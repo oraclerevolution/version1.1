@@ -70,6 +70,7 @@ class ActualitesPage extends React.Component{
 
 const styles = StyleSheet.create({
     scrollview: {
+        padding:8
     },
 })
 

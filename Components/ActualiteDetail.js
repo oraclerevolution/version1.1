@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet, View, Text, Image, Button, ActivityIndicator, ScrollView, TouchableOpacity} from 'react-native'
 import {Button as Buttons, Header} from "react-native-elements";
 import Icon from 'react-native-vector-icons/Ionicons';
+import moment from 'moment'
 
 class ActualiteDetail extends React.Component {
 
@@ -29,7 +30,7 @@ class ActualiteDetail extends React.Component {
     }
 
     getImageFromApi (name) {
-        return 'http://51.68.44.231:3334/images/'+ name
+        return 'http://51.68.44.231/images/'+ name
     }
 
     _displayLoading(){
@@ -45,6 +46,7 @@ class ActualiteDetail extends React.Component {
     _displayArticle(){
         const {article} = this.state
         if(article != undefined){
+            console.log(article.register_date)
             return(
                 <View style={{flex:1}}>
                     <Header
@@ -65,11 +67,10 @@ class ActualiteDetail extends React.Component {
                     <ScrollView style={styles.scrollview_container}>
                         <Image
                             style={styles.image}
-                            source={require('../assets/actu1.png')}
+                            source={{uri: this.getImageFromApi(article.photo)}}
                         />
                         <View style={{padding:7}}>
                             <Text style={styles.article}>{article.article}</Text>
-                            <Text style={{fontWeight:'bold', textAlign:'left',marginTop:10}}>Posté le 28.03.2019</Text>
                         </View>
                     </ScrollView>
                 </View>
@@ -115,6 +116,7 @@ const styles = StyleSheet.create({
     },
     article: {
         fontSize: 18,
+        textAlign:'justify'
     },
     loadingContainer: {
         position:'absolute',
