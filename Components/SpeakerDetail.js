@@ -1,51 +1,90 @@
 import React from 'react'
 import {Header} from 'react-native-elements'
-import {StyleSheet, View, Text, Image, ScrollView} from 'react-native';
-import { Button as Btns } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {StyleSheet, View, Text, Image, ScrollView, TouchableOpacity,ActivityIndicator} from 'react-native';
 
 export default class SpeakerDetail extends React.Component{
-    render(){
-        return(
-            <View style={{flex:1}}>
-                <Header
+    constructor(props){
+        super(props)
+        this.state={
+            speakers: undefined,
+            isLoading: true
+        }
+    }
+
+    getSpeakerDetailFromApi(id){
+        return fetch('http://51.68.44.231:3334/speaker/' + id)
+            .then((response) => response.json())
+            .catch((error) => console.error(error))
+    }
+
+    componentDidMount(){
+        this.getSpeakerDetailFromApi(this.props.navigation.state.params.idSpeaker).then(data => {
+            this.setState({
+                speakers: data.res,
+                isLoading: false
+            })
+        })
+    }
+
+    getImageFromApi (name) {
+        return 'http://51.68.44.231/images/'+ name
+    }
+
+    _displayLoading(){
+        if (this.state.isLoading){
+            return(
+                <View style={styles.loadingContainer}>
+                    <ActivityIndicator size="large"/>
+                </View>
+            )
+        }
+    }
+
+    _displaySpeaker(){
+        const {speakers} = this.state
+        if(speakers != undefined){
+            return(
+                <View style={{flex:1}}>
+                    <Header
                     containerStyle={{
                         backgroundColor: '#0a2849',
                     }}
                     leftComponent={
-                        <Btns
-                            type="clear"
-                            icon={
-                                <Icon
-                                    name="ios-menu"
-                                    size={25}
-                                    color="white"
-                                />
-                            }
-                            onPress={()=>this.props.navigation.openDrawer()}
-                        />
+                        <TouchableOpacity>
+                            <Text style={{color:'white'}} onPress={()=>this.props.navigation.goBack()}>Retour</Text>
+                        </TouchableOpacity>
                     }
                     centerComponent={{ text: 'Details du speaker', style: { color: '#fff' } }}
-                />
-                <ScrollView style={styles.container}>
-                    <View style={styles.vueImage}>
-                        <View style={{flex:1}}>
+                    />
+                    <ScrollView style={styles.container}>
+                        <View style={{borderWidth:1, margin:15, flex:1, justifyContent:'center', alignItems:'center', padding:10, backgroundColor:'white'}}>
                             <Image
-                                source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'}}
-                                style={{height:180, width:180}}
+                                source={{uri: this.getImageFromApi(speakers.photo)}}
+                                style={{borderWidth:1, width:200, height:200}}
                             />
-                            <Text style={styles.textName}>Chris Jackson</Text>
-                            <Text style={styles.textName}>Directeur exécutif weenovit</Text>
-                            <Text style={styles.textName}>Côte d'Ivoire</Text>
+                            <Text style={{textAlign:'center', fontSize:19, fontWeight:'bold', marginBottom:6}}>{speakers.name}</Text>
+                            <Text style={{textAlign:'center'}}>{speakers.fonction}</Text>
                         </View>
-                    </View>
-                    <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-                        <Text style={styles.Title}>Biographie</Text>
-                        <Text style={{padding:10}}>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </Text>
-                    </View>
-                </ScrollView>
+                        <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+                            <Text style={styles.Title}>Biographie</Text>
+                            <Text style={{padding:10}}>
+                                {speakers.biographie}
+                            </Text>
+                        </View>
+                    </ScrollView>
+                </View>
+                
+            )
+        }
+    }
+
+    render(){
+        return(
+            <View style={{flex:1}}>
+                <View style={{flex:1}}>
+                    {this._displayLoading()}
+                    {this._displaySpeaker()}
+                </View>
             </View>
         )
     }
@@ -74,6 +113,15 @@ const styles = StyleSheet.create({
         marginBottom:15,
         textAlign:'center',
         color: 'gray'
+    },
+    loadingContainer: {
+        position:'absolute',
+        left:0,
+        right:0,
+        top:0,
+        bottom:0,
+        alignItems:'center',
+        justifyContent:'center'
     },
     textName: {
         fontSize:17,

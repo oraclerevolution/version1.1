@@ -20,7 +20,7 @@ export default class TicketPage extends React.Component{
                     centerComponent={{ text: 'Recuperer vos tickets', style: { color: '#fff', fontSize:18,} }}
                 />
                 <Web
-                    source={{ uri: 'https://google.com' }}
+                    source={{ uri: 'http://inscription.africawebfestival.com/e/1/africa-web-festival' }}
                     style={{flex:1, width: '100%'}}
                 />
             </View>

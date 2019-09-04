@@ -3,10 +3,10 @@ import {TouchableOpacity,View,StyleSheet,Image,Text} from 'react-native'
 
 export default class SpeakerItem extends React.Component{
     render(){
-        const speaker = this.props.speaker
+        const {speaker,goDetail} = this.props
         const photo = speaker.photo
         return(
-            <TouchableOpacity style={styles.item2} onPress={()=>this.props.navigation.navigate('detail-speaker')}>
+            <TouchableOpacity style={styles.item2} onPress={()=>goDetail(speaker.id)}>
                     <View style={{flex:1}}>
                         <Image
                             source={{uri: 'http://51.68.44.231/images/'+photo}}

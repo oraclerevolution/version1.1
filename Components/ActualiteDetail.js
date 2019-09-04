@@ -46,7 +46,6 @@ class ActualiteDetail extends React.Component {
     _displayArticle(){
         const {article} = this.state
         if(article != undefined){
-            console.log(article.register_date)
             return(
                 <View style={{flex:1}}>
                     <Header

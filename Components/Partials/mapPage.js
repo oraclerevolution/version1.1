@@ -22,6 +22,11 @@ export default class mapPage extends React.Component{
             .catch((error) => console.error(error))
     }
 
+    goDetail = (idSpeaker)=>{
+        console.log("Display article id " + idSpeaker)
+        this.props.navigation.navigate('detail-speaker',{ idSpeaker: idSpeaker})
+    };
+
     componentDidMount() {
         this.getSpeakersFromApi().then(data => {
             this.setState({speakers: data})
@@ -55,7 +60,7 @@ export default class mapPage extends React.Component{
                     <FlatList
                         data={this.state.speakers}
                         keyExtractor={(item) => item.id.toString()}
-                        renderItem={({item}) => <SpeakerItem speaker={item}/>}
+                        renderItem={({item}) => <SpeakerItem speaker={item} goDetail={this.goDetail} />}
                     />
                 </ScrollView>
 
