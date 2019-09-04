@@ -1,10 +1,31 @@
 import React from 'react'
 import {Header} from 'react-native-elements'
-import {StyleSheet, View, Text, TouchableOpacity, ScrollView} from 'react-native';
+import {StyleSheet, View, Text, ScrollView, FlatList} from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ThematiqueItem from './ThematiqueItem'
 
 export default class ThematiquesPage extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            thematiques: []
+        }
+    }
+
+    getThematiqueFromApi(){
+        let url = 'http://51.68.44.231:3334/thems'
+
+        return fetch(url)
+            .then((response) => response.json())
+            .catch((error) => console.error(error))
+    }
+
+    componentDidMount() {
+        this.getThematiqueFromApi().then(data => {
+            this.setState({thematiques: data.data})
+        })
+    }
 
     render(){
         return(
@@ -30,23 +51,13 @@ export default class ThematiquesPage extends React.Component{
                 />
 
                 <ScrollView style={styles.AccordionView}>
-                    <Text style={styles.accordionText}>Pour vous aider à mieux vivre et savoir pourquoi participer à cette edition de Africa Web Festival 2019, nous avons jugés bon d'énumérer les thématiques qui seront aborder lors des panels et conférences</Text>
-
-                    <View style={styles.thematikStyle}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Agriculture, Education & Santé</Text>
-                    </View>
-
-                    <View style={styles.thematikStyle}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Big Data</Text>
-                    </View>
-
-                    <View style={styles.thematikStyle}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Civic Tech: le civisme à l'heure du numérique</Text>
-                    </View>
-
-                    <View style={styles.thematikStyle}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Innovation (Intelligence artificielle, Crypto-monnaie, Blockchain, etc.)</Text>
-                    </View>
+                <Text style={styles.accordionText}>Pour vous aider à mieux vivre et savoir pourquoi participer à cette edition de Africa Web Festival 2019, nous avons jugés bon d'énumérer les thématiques qui seront aborder lors des panels et conférences</Text>
+                    <FlatList
+                        data={this.state.thematiques}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({item}) => <ThematiqueItem thematique={item}/>
+                    }
+                    />
                 </ScrollView>
 
             </View>
@@ -66,14 +77,4 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize:16,
     },
-    thematikStyle:{
-        backgroundColor:'#0a2849',
-        borderWidth: 1,
-        borderColor: 'white',
-        borderRadius: 18,
-        height:50,
-        justifyContent:'center',
-        alignItems: 'center',
-        margin: 10
-    }
 })

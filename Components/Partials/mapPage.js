@@ -1,10 +1,32 @@
 import React from 'react'
 import {Header} from 'react-native-elements'
-import {StyleSheet, View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
+import {View,ScrollView, StyleSheet, FlatList} from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import SpeakerItem from './SpeakerItem';
 
 export default class mapPage extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            speakers: []
+        }
+    }
+
+    getSpeakersFromApi(){
+        let url = 'http://51.68.44.231:3334/speakers'
+
+        return fetch(url)
+            .then((response) => response.json())
+            .catch((error) => console.error(error))
+    }
+
+    componentDidMount() {
+        this.getSpeakersFromApi().then(data => {
+            this.setState({speakers: data})
+        })
+    }
 
     render(){
         return(
@@ -29,33 +51,13 @@ export default class mapPage extends React.Component{
                     centerComponent={{ text: 'Les speakers', style: { color: '#fff' } }}
                 />
 
-            <ScrollView style={{flex:1}}>
-                <TouchableOpacity style={styles.item2} onPress={()=>this.props.navigation.navigate('detail-speaker')}>
-                    <View style={{flex:1}}>
-                        <Image
-                            source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'}}
-                            style={{height:60, width:60}}
-                        />
-                    </View>
-                    <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
-                        <Text style={{fontSize:17, fontWeight: 'bold'}}>Amy Farha</Text>
-                        <Text style={{fontSize:15,textAlign:'center'}}>Vice President à Université Virtuelle de CI</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.item2}>
-                    <View style={{flex:1}}>
-                        <Image
-                            source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'}}
-                            style={{height:60, width:60}}
-                        />
-                    </View>
-                    <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
-                        <Text style={{fontSize:17, fontWeight: 'bold'}}>Chris Jackson</Text>
-                        <Text style={{fontSize:15,textAlign:'center'}}>CEO chez WeenovIT</Text>
-                    </View>
-                </TouchableOpacity>
-            </ScrollView>
+                <ScrollView style={{flex:1}}>
+                    <FlatList
+                        data={this.state.speakers}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({item}) => <SpeakerItem speaker={item}/>}
+                    />
+                </ScrollView>
 
             </View>
         )
@@ -75,17 +77,5 @@ const styles = StyleSheet.create({
     },
     accordionText:{
         textAlign: 'center'
-    },
-    item2: {
-        padding: 10,
-        borderWidth:1,
-        borderColor:'#0a2849',
-        backgroundColor: '#efefef',
-        height: 90,
-        margin:5,
-        borderRadius: 5,
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'center'
-    },
+    }
 })
