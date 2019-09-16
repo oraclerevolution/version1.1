@@ -14,6 +14,7 @@ import Congratulations from './Congratulations'
 import InteretPage from './Partials/InteretPage'
 import TicketPage from './TicketPage'
 import SpeakerDetail from './SpeakerDetail'
+import FormationsPage from './FormationsPage'
 
 const CustomDrawerComponent = (props) => (
     <SafeAreaView style={{flex:1}}>
@@ -38,6 +39,9 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
     'Le programme': {
         screen: Programme
+    },
+    'Les formations': {
+        screen: FormationsPage
     },
     'Les actualités': {
         screen: ActualitesPage
