@@ -3,9 +3,37 @@ import {StyleSheet, View, Text, TouchableOpacity, ScrollView} from 'react-native
 import { Button as Buttons } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Header} from 'react-native-elements'
+import Accordion from 'react-native-collapsible/Accordion';
+import data from './AccordionData'
 
 export default class EvenementPage extends React.Component{
 
+    constructor(){
+        super()
+        this.state={
+            activeSections: [],
+        }
+    }
+    
+      _renderHeader = section => {
+        return (
+          <View style={styles.header}>
+            <Text style={styles.headerText}>{section.title}</Text>
+          </View>
+        );
+      };
+
+      _renderContent = section => {
+        return (
+          <View style={styles.content}>
+            <Text>{section.description}</Text>
+          </View>
+        );
+      };
+
+      _updateSections = activeSections => {
+        this.setState({ activeSections });
+      };
     render(){
         return(
             <View style={styles.container}>
@@ -31,18 +59,16 @@ export default class EvenementPage extends React.Component{
 
                 <ScrollView style={styles.AccordionView}>
                     <Text style={styles.accordionText}>Pour cette édition d'Africa Web Festival, nous portons à votre connaissance les activités spécifiques qui auront lieu</Text>
-                        
-                    <View style={styles.thematikStyle}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Hackhathon</Text>
-                    </View>
 
-                    <View style={styles.thematikStyle}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Campus AWF</Text>
-                    </View>
-
-                    <View style={styles.thematikStyle}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>programme jeune publique</Text>
-                    </View>
+                    <Accordion
+                        containerStyle={{margin:10}}
+                        sections={data}
+                        activeSections={this.state.activeSections}
+                        renderHeader={this._renderHeader}
+                        renderContent={this._renderContent}
+                        onChange={this._updateSections}
+                    />  
+                    
                 </ScrollView>
 
             </View>
@@ -57,6 +83,7 @@ const styles = StyleSheet.create({
     AccordionView: {
         padding: 15,
         flex:1,
+        margin:10
     },
     accordionText:{
         textAlign: 'center',
@@ -71,5 +98,18 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems: 'center',
         margin: 10
-    }
+    },
+    header: {
+        margin: 3,
+        backgroundColor: 'lightgray',
+        padding: 8
+    },
+    headerText: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 18
+    },
+    content: {
+        padding: 13,
+    },
 })
