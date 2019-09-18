@@ -15,6 +15,10 @@ import InteretPage from './Partials/InteretPage'
 import TicketPage from './TicketPage'
 import SpeakerDetail from './SpeakerDetail'
 import FormationsPage from './FormationsPage'
+import mapPage from './Partials/mapPage'
+import jeudiPremier from './Partials/JeudiPremier'
+import VendrediDeuxieme from './Partials/VendrediDeuxieme'
+import SamediTroisieme from './Partials/SamediTroisieme'
 
 const CustomDrawerComponent = (props) => (
     <SafeAreaView style={{flex:1}}>
@@ -52,6 +56,36 @@ const MyDrawerNavigator = createDrawerNavigator({
     'Authentification': {
         screen: Authentication
     },
+    'reseau':{
+        screen: InteretPage,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
+    },
+    'speakers':{
+        screen: mapPage,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
+    },
+    'jeudi':{
+        screen: jeudiPremier,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
+    },
+    'vendredi':{
+        screen: VendrediDeuxieme,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
+    },
+    'samedi':{
+        screen: SamediTroisieme,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
+    }
 
     }, {
     initialRouteName:'Accueil',
@@ -95,6 +129,18 @@ const myStackNavigation = createStackNavigator({
     },
     "detail-speaker":{
         screen: SpeakerDetail
+    },
+    "reseau": {
+        screen: InteretPage
+    },
+    "jeudi":{
+        screen: jeudiPremier
+    },
+    "vendredi":{
+        screen: VendrediDeuxieme
+    },
+    "samedi":{
+        screen: SamediTroisieme
     }
 },{
     initialRouteName: 'home',
