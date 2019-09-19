@@ -6,7 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import ThematiquesPage from './Partials/ThematiquesPage'
 import EvenementPage from './Partials/EvenementPage'
-import InteretPage from './Partials/InteretPage'
+import ReseauDetail from './ReseauDetail'
 import mapPage from './Partials/mapPage'
 
 class IconWithBadge extends React.Component {
@@ -48,7 +48,7 @@ export default createAppContainer(
         {
             'Thématiques': { screen: ThematiquesPage },
             'Activités spécifiques': { screen: EvenementPage },
-            'Réseautage': { screen: InteretPage },
+            'Réseautage': { screen: ReseauDetail },
             'Speakers': {screen: mapPage},
         },
         {

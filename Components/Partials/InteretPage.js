@@ -54,7 +54,7 @@ export default class InteretPage extends React.Component{
                     onPress: () => this._postReseau()
                 },
             ],
-            {cancelable: false},
+            {cancelable: true},
         );
     }
 

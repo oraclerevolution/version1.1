@@ -19,6 +19,7 @@ import mapPage from './Partials/mapPage'
 import jeudiPremier from './Partials/JeudiPremier'
 import VendrediDeuxieme from './Partials/VendrediDeuxieme'
 import SamediTroisieme from './Partials/SamediTroisieme'
+import ReseauDetail from './ReseauDetail'
 
 const CustomDrawerComponent = (props) => (
     <SafeAreaView style={{flex:1}}>
@@ -85,6 +86,12 @@ const MyDrawerNavigator = createDrawerNavigator({
         navigationOptions:()=>({
             drawerLabel: ()=>null
         })
+    },
+    'reseautageDetail':{
+        screen: ReseauDetail,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
     }
 
     }, {
@@ -141,6 +148,9 @@ const myStackNavigation = createStackNavigator({
     },
     "samedi":{
         screen: SamediTroisieme
+    },
+    "reseautageDetail":{
+        screen: ReseauDetail
     }
 },{
     initialRouteName: 'home',

@@ -2,7 +2,7 @@ const data = [
     {
         id:0,
         name: 'Réseautage',
-        page:"reseau",
+        page:"reseautageDetail",
         iconName:"ios-pulse"
     },
     {
