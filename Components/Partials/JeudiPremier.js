@@ -9,8 +9,8 @@ export default class JeudiPremier extends React.Component{
     constructor(){
         super()
         this.data = [
-            {time: '08:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '10:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
+            {time: '08:30', title: 'Accueil & installation des invités', description:''},
+            {time: '09:00', title: "Cérémonie d'ouverture", description: "Introduction de la 6è édition de AWF\nInspiration: «Envie de Changer le Monde ? Voici mes recettes ! »\nMot d'ouverture\nPanel #1 en collaboration avec SMART AFRICA\nThème: Accélerer la numérisation de l'Afrique: Enjeux et Perspectives\nSalle OIF"},
             {time: '11:00', title: 'Conference', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
             {time: '12:00', title: 'Pause', description: "Dejeuner avec les panelistes"},
             {time: '13:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},

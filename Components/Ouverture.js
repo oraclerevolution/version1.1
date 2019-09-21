@@ -77,8 +77,8 @@ export default class AssetExample extends React.Component {
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Nos partenaires</Text>
                     <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
                         <Image
-                            style={{height:200,width: 350}}
-                            source={require('../assets/logo_partenaire_awf.jpg')}
+                            style={{height:250,width: 350}}
+                            source={require('../assets/logo_partenaire_awf.png')}
                         />
                     </View>
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Programme d'activités</Text>
