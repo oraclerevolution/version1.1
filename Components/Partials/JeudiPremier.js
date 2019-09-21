@@ -10,16 +10,13 @@ export default class JeudiPremier extends React.Component{
         super()
         this.data = [
             {time: '08:30', title: 'Accueil & installation des invités', description:''},
-            {time: '09:00', title: "Cérémonie d'ouverture", description: "Introduction de la 6è édition de AWF\nInspiration: «Envie de Changer le Monde ? Voici mes recettes ! »\nMot d'ouverture\nPanel #1 en collaboration avec SMART AFRICA\nThème: Accélerer la numérisation de l'Afrique: Enjeux et Perspectives\nSalle OIF"},
-            {time: '11:00', title: 'Conference', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '12:00', title: 'Pause', description: "Dejeuner avec les panelistes"},
-            {time: '13:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '14:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '15:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '16:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '17:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-
+            {time: '09:00', title: "Cérémonie d'ouverture", description:"Introduction de la 6è édition de AWF\nInspiration: «Envie de Changer le Monde ? Voici mes recettes ! »\nMot d'ouverture\nPanel #1 en collaboration avec SMART AFRICA\nThème: Accélerer la numérisation de l'Afrique: Enjeux et Perspectives\nSalle OIF"},
+            {time: '11:00', title: 'Pause'},
+            {time: '14:00', title: 'Panel #2', description: "Femmes entrepreneures &amp; numérique : ces actrices de l’innovation à prendre en compte !\nSalle OIF"},
+            {time: '15:20', title: 'Panel #3', description: "Les Médias en Afrique : Les GAFAM dictent-ils les règles du jeu ?\nSalle OIF"},
+            {time: '16:40', title: 'Atelier participatif #1 en collaboration avec CFI', description: "– Dédiés aux Participants du CAMPUS AWF 2019\nThème: Leadership\n Révèle le leader qui sommeille en toi !\nSalle Orange"},
         ]
+
     }
     render() {
         return(
