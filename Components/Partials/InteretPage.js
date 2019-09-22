@@ -49,7 +49,13 @@ export default class InteretPage extends React.Component{
                 },
                 {
                     text: 'Oui',
-                    onPress: () => this._postReseau()
+                    onPress: () => {
+                        if (this.state.name != '' && this.state.email != '' && this.state.type != '' && this.state.sujet != '' && this.state.message != '') {
+                            this._postReseau()
+                        } else {
+                            Alert.alert('Remplissez tout les champs svp !')
+                        }
+                    }  
                 },
             ],
             {cancelable: true},
