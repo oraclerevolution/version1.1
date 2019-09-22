@@ -42,7 +42,7 @@ export default class VendrediDeuxieme extends React.Component{
                             onPress={()=> this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Vendredi 30 Novembre', style: { color: '#fff', fontSize:18 } }}
+                    centerComponent={{ text: 'Vendredi 22 Novembre', style: { color: '#fff', fontSize:18 } }}
                 />
                 <View style={styles.container}>
                     <Timeline

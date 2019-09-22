@@ -4,20 +4,13 @@ import {Header,Button as Buttons} from "react-native-elements";
 import Icon from 'react-native-vector-icons/Ionicons';
 import Timeline from 'react-native-timeline-listview'
 
-export default class SamediTroisieme extends React.Component{
+export default class Mercredi extends React.Component{
 
     constructor(){
         super()
         this.data = [
-            {time: '09:00', title: 'Panel #1', description: "TIC et Transmission des Relations intergénérationnelles\nSalle OIF"},
-            {time: '10:00', title: 'PROGRAMME JEUNES (Chapitre 4)', description: "Première partie : Comment provoquer le changement autour de nous\nEspace Jeune Public"},
-            {time: '10:20', title: 'PANEL #2', description: "Titre Panel #2\nSalle OIF"},
-            {time: '11:40', title: 'CHAMPIS DES TIC', description: "Salle OIF"},
-            {time: '11:30', title: 'Atelier participatif #1 en collaboration avec CFI', description: "– Dédiés aux Participants du CAMPUS AWF 2019\nThème : Jeunes & Nouvelles Technologies\nL’omniprésence des technologies : Défis, Opportunités & Perspectives pour la Jeunesse en Afrique\nSalle Orange"},
-            {time: '13:00', title: 'Pause'},
-            {time: '13:30', title: 'Cérémonie de cloture', description: "-Discours\n-Remises de prix\n-Cocktail\nSalle OIF"},
-            {time: '16:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '17:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
+            {time: '18:00', title: 'Cocktail AKWABA avec ORANGE CÔTE D\'IVOIRE', description: "6 à 8: Le reseautage des affaires !\nMaison du digital ORANGE CÔTE D'IVORE"},
+            {time: '20:00'},
 
         ]
     }
@@ -42,7 +35,7 @@ export default class SamediTroisieme extends React.Component{
                             onPress={()=> this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Samedi 23 Novembre', style: { color: '#fff', fontSize:18 } }}
+                    centerComponent={{ text: 'Mercredi 20 Novembre', style: { color: '#fff', fontSize:18 } }}
                 />
                 <View style={styles.container}>
                     <Timeline

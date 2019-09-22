@@ -91,7 +91,7 @@ export default class AssetExample extends React.Component {
                                 />
                             </View>
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
-                                <Text style={{fontSize:19, fontWeight: 'bold'}}>De 08h à 17h</Text>
+                                <Text style={{fontSize:19, fontWeight: 'bold'}}>De 08h à 18h</Text>
                             </View>
                         </TouchableOpacity >
 
@@ -103,7 +103,7 @@ export default class AssetExample extends React.Component {
                                 />
                             </View>
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
-                                <Text style={{fontSize:19, fontWeight: 'bold'}}>De 08h à 17h</Text>
+                                <Text style={{fontSize:19, fontWeight: 'bold'}}>De 09h à 18h</Text>
                             </View>
                         </TouchableOpacity >
 
@@ -114,7 +114,7 @@ export default class AssetExample extends React.Component {
                                     source={require('../assets/jeudi.png')} />
                             </View>
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
-                                <Text style={{fontSize:19, fontWeight: 'bold'}}>De 08h à 17h</Text>
+                                <Text style={{fontSize:19, fontWeight: 'bold'}}>De 09h à 17h</Text>
                             </View>
                         </TouchableOpacity >
                     </View>
