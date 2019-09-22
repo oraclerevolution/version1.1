@@ -2,8 +2,6 @@ import React from 'react';
 import {Header} from 'react-native-elements';
 import {StyleSheet, View, Button, Text, Alert,TextInput,Picker, TouchableOpacity} from 'react-native';
 import Textarea from 'react-native-textarea';
-import { Button as Buttons } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class InteretPage extends React.Component{
 
@@ -67,17 +65,9 @@ export default class InteretPage extends React.Component{
                         backgroundColor: '#0a2849',
                     }}
                     leftComponent={
-                        <Buttons
-                            type="clear"
-                            icon={
-                                <Icon
-                                    name="ios-menu"
-                                    size={25}
-                                    color="white"
-                                />
-                            }
-                            onPress={()=>this.props.navigation.openDrawer()}
-                        />
+                        <TouchableOpacity>
+                            <Text style={{color:'white'}} onPress={()=>this.props.navigation.goBack()}>Retour</Text>
+                        </TouchableOpacity>
                     }
                     centerComponent={{ text: 'Votre intérêt', style: { color: '#fff' } }}
                 />
