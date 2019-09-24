@@ -1,6 +1,6 @@
 import React from 'react'
 import { createStackNavigator, createDrawerNavigator, createAppContainer, DrawerItems} from 'react-navigation'
-import {SafeAreaView, ScrollView, View, Dimensions, Image} from 'react-native'
+import {SafeAreaView, ScrollView, View, Dimensions, Image, Text} from 'react-native'
 import Ouverture from './Ouverture'
 import AfricaWeb2019 from './AfricaWeb2019'
 import ActualitesPage from './ActualitesPage'
@@ -30,8 +30,12 @@ const CustomDrawerComponent = (props) => (
             />
         </View>
         <ScrollView>
-            <DrawerItems {...props}/>
+            <DrawerItems labelStyle={{fontSize:17}} {...props}/>
         </ScrollView>
+        <View style={{backgroundColor:'#0a2849', height:80,}}>
+            <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© Africa Web Festival App - TOUS DROITS RESERVES</Text>
+            <Text style={{textAlign:'center', color:'white',fontSize:12}}>App powered by WEENOVIT ®</Text>
+        </View>
     </SafeAreaView>
 )
 
@@ -51,7 +55,7 @@ const MyDrawerNavigator = createDrawerNavigator({
     'Les actualités': {
         screen: ActualitesPage
     },
-    'Rétrospective': {
+    'Rétrospectives': {
         screen: AwfTheqPage
     },
     'Authentification': {
@@ -89,6 +93,12 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
     'reseautageDetail':{
         screen: ReseauDetail,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
+    },
+    'connex':{
+        screen: Authentication,
         navigationOptions:()=>({
             drawerLabel: ()=>null
         })
@@ -131,7 +141,7 @@ const myStackNavigation = createStackNavigator({
     "interet": {
         screen: InteretPage
     },
-    "connex": {
+    "Authentification": {
         screen: Authentication
     },
     "detail-speaker":{

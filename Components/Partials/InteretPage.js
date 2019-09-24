@@ -28,8 +28,9 @@ export default class InteretPage extends React.Component{
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                name: this.state.username,
+                name: this.state.name,
                 email: this.state.email,
+                type: this.state.type,
                 sujet: this.state.sujet,
                 message: this.state.message
             }),
@@ -75,7 +76,7 @@ export default class InteretPage extends React.Component{
                             <Text style={{color:'white'}} onPress={()=>this.props.navigation.goBack()}>Retour</Text>
                         </TouchableOpacity>
                     }
-                    centerComponent={{ text: 'Votre intérêt', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'VOTRE INTÉRÊT', style: { color: '#fff' } }}
                 />
 
                     <View style={styles.AccordionView} >
@@ -130,6 +131,10 @@ export default class InteretPage extends React.Component{
                                 onPress={this._TouchAlert.bind(this)}
                             />
                         </TouchableOpacity>
+                    </View>
+                    <View style={{backgroundColor:'#0a2849', height:80,}}>
+                        <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© AFRICA WEB FESTIVAL APP - TOUS DROITS RESERVES</Text>
+                        <Text style={{textAlign:'center', color:'white',fontSize:12}}>App powered by WEENOVIT ®</Text>
                     </View>
             </View>
         )

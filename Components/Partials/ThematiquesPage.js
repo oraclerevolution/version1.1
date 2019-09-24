@@ -47,7 +47,7 @@ export default class ThematiquesPage extends React.Component{
                             onPress={()=>this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Les thématiques', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'THÉMATIQUES', style: { color: '#fff' } }}
                 />
 
                 <ScrollView style={styles.AccordionView}>

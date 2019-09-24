@@ -26,7 +26,7 @@ export default class EvenementPage extends React.Component{
       _renderContent = section => {
         return (
           <View style={styles.content}>
-            <Text>{section.description}</Text>
+            <Text style={{color:'white', fontWeight:'bold'}}>{section.description}</Text>
           </View>
         );
       };
@@ -54,7 +54,7 @@ export default class EvenementPage extends React.Component{
                             onPress={()=>this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Les activités spécifiques', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'ACTIVITÉS SPÉCIFIQUES', style: { color: '#fff' } }}
                 />
 
                 <ScrollView style={styles.AccordionView}>
@@ -101,15 +101,19 @@ const styles = StyleSheet.create({
     },
     header: {
         margin: 3,
-        backgroundColor: 'lightgray',
+        borderWidth:1,
+        borderColor:'#0a2849',
         padding: 8
     },
     headerText: {
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 18
+        color:'#0a2849',
+        fontSize: 18,
+        borderRadius:2
     },
     content: {
         padding: 13,
+        backgroundColor:'#0a2849',
     },
 })

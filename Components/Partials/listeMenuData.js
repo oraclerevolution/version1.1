@@ -13,7 +13,7 @@ const data = [
     },
     {
         id:2,
-        name:'Intervenant',
+        name:'Intervenants',
         page:"speakers",
         iconName:"ios-person"
     },

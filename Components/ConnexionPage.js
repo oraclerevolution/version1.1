@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, Button, StyleSheet, TextInput, KeyboardAvoidingView, Image, TouchableOpacity, ImageBackground} from 'react-native'
+import {View, Text, Button, StyleSheet, TextInput, KeyboardAvoidingView, Image, TouchableOpacity, ImageBackground, Alert, AsyncStorage} from 'react-native'
 import {Button as Buttons, Header} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -8,10 +8,35 @@ export default class ConnexionPage extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            id_username: '',
-            password: ''
+            numero: '',
+            password: '',
+            dataSource: []
         }
+
+        this._signInAsync = this._signInAsync.bind(this)
     }
+
+    _signInAsync(){
+        return fetch('http://51.68.44.231:3334/login', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: this.state.numero,
+                password: this.state.password,
+            }),
+        }).then((data) => {
+            if (data.status == 200) {
+                AsyncStorage.setItem('TokenUser', 'awf')
+                this.props.navigation.navigate('Accueil')
+            } else {
+                Alert.alert('Les identifiants sont incorrects')
+            }
+          });
+
+  };
 
     render(){
         return(
@@ -38,15 +63,15 @@ export default class ConnexionPage extends React.Component{
               <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
                   <ImageBackground source={require('../assets/login.jpg')} style={{width: '100%', height: '100%', flex:1, alignItems: 'center', justifyContent: 'center'}}>
                       <Image
-                          source={require('../assets/logo_awf.png')}
+                          source={require('../assets/logo-rond.jpg')}
                           style={styles.strech}
                       />
                       <Text style={{fontSize:22,fontWeight:'bold', color:'white'}}>Connectez-vous</Text>
                       <TextInput
                           placeholder='numéro de telephone'
-                          value={this.state.id_username}
+                          value={this.state.numero}
                           style={styles.champ}
-                          onChangeText={id_username => this.setState({ id_username })}
+                          onChangeText={numero => this.setState({ numero })}
                       />
 
                       <TextInput
@@ -60,13 +85,16 @@ export default class ConnexionPage extends React.Component{
                       <TouchableOpacity style={styles.btn_soumettre}>
                           <Button
                               title={"Connexion"}
-                              onPress={()=>console.log('ok')}
+                              onPress={()=>{
+                                if (this.state.numero != '' && this.state.password != '') {
+                                    this._signInAsync()
+                                } else {
+                                    Alert.alert('Remplissez tout les champs svp !')
+                                }
+                            }}
                           />
                       </TouchableOpacity>
-                      <Text style={{color:'white', fontStyle:'italic'}}>Si vous n'avez pas de compte ? Inscrivez-vous !</Text>
                   </ImageBackground>
-
-                  
               </KeyboardAvoidingView>
           </View>
         );
@@ -89,8 +117,10 @@ const styles = StyleSheet.create({
     },
     champ: {
         margin: 10,
-        borderBottomWidth:1,
+        borderWidth:1,
         padding:6,
+        backgroundColor:'white',
+        borderRadius:3,
         width:250
     },
     btn_soumettre: {

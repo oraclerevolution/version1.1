@@ -24,7 +24,7 @@ export default class ReseauDetail extends React.Component{
                             onPress={()=>this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Les types de reseautage', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'RESEAUTAGES', style: { color: '#fff' } }}
                 />
                 <ScrollView style={styles.container}>
                     <View style={{margin:10, backgroundColor:'#66a7f0', padding:10, borderRadius:3, shadowColor: "#000",shadowOffset: {width: 0,height: 4,

@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, Button, TextInput, StyleSheet, KeyboardAvoidingView, Image, TouchableOpacity, ImageBackground} from 'react-native'
+import {View, Text, Button, TextInput, StyleSheet, KeyboardAvoidingView, Image, Alert, TouchableOpacity, ImageBackground} from 'react-native'
 import {Button as Buttons, Header} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -27,7 +27,7 @@ export default class InscriptionPage extends React.Component{
             },
             body: JSON.stringify({
                 username: this.state.username,
-                numero: this.state.numero,
+                email: this.state.numero,
                 password: this.state.password,
             }),
         }).then((response) => response.json()).catch((error) => console.error(error))
@@ -59,7 +59,7 @@ export default class InscriptionPage extends React.Component{
                 <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
                     <ImageBackground source={require('../assets/login.jpg')} style={{width: '100%', height: '100%', flex:1, alignItems: 'center', justifyContent: 'center'}}>
                         <Image
-                            source={require('../assets/logo_awf.png')}
+                            source={require('../assets/logo-rond.jpg')}
                             style={styles.strech}
                         />
                         <Text style={{fontSize:22,fontWeight:'bold', color:'white'}}>Inscrivez-vous</Text>
@@ -89,11 +89,16 @@ export default class InscriptionPage extends React.Component{
                         <TouchableOpacity style={styles.btn_soumettre}>
                             <Button
                                 title={"Inscription"}
-                                onPress={()=>this._register()}
+                                onPress={()=> {
+                                    if (this.state.username != '' && this.state.numero != '' && this.state.password != '') {
+                                        this._register()
+                                    } else {
+                                        Alert.alert('Remplissez tout les champs svp !')
+                                    }
+                                } }
                             />
                         </TouchableOpacity>
 
-                        <Text style={{color:'white', fontStyle:'italic'}}>Vous avez déjà un compte ? connectez-vous !</Text>
                     </ImageBackground>
 
                 </KeyboardAvoidingView>
@@ -118,8 +123,10 @@ const styles = StyleSheet.create({
     },
     champ: {
         margin: 10,
-        borderBottomWidth:1,
+        borderWidth:1,
+        backgroundColor:'white',
         padding:6,
+        borderRadius:3,
         width:250
     },
     btn_soumettre: {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image,FlatList, Button, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image,FlatList, Button, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
 import {Header,Button as Buttons} from "react-native-elements";
 import Icon from 'react-native-vector-icons/Ionicons';
 import data from './Partials/listeMenuData'
@@ -9,17 +9,13 @@ export default class AssetExample extends React.Component {
 
     constructor(){
         super()
-        this.state = {
-            clique: 0
-        }
         this.goToTicketPage = this.goToTicketPage.bind(this)
         this.goToReseautagePage = this.goToReseautagePage.bind(this)
     }
+
     goToTicketPage(){
         this.props.navigation.navigate('ticket')
     }
-
-    
 
     goToReseautagePage = (nomPage,idMenu)=>{
         console.log("Display article id " + idMenu)
@@ -50,35 +46,32 @@ export default class AssetExample extends React.Component {
                 />
                 <ScrollView style={styles.container}>
                     <Text style={styles.paragraph}>Quoi d'neuf ?</Text>
-                    <Image style={styles.logo} source={{uri: 'http://img.over-blog-kiwi.com/2/49/57/72/20181026/ob_f8f16f_africa-web-festival-1.jpg'}} />
+                    <Image style={styles.logo} source={require('../assets/vivez.jpg')} />
                     <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
                         <Text style={{textAlign:'center',marginBottom:5, fontWeight:'bold'}}>Africa Web festival vous rassemble les 21, 22 et 23 novembre 2019.</Text>
                         <Button
                             title="prends ton ticket"
                             onPress={()=>{
-                                let numberOne = parseInt(1)
-                                this.setState({clique: this.state.clique + 1})
                                 this.goToTicketPage()
-                                console.log(`${this.state.clique} click`)
                             }}
                         />
                     </View>
 
-                    <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Découvrez</Text>
+                    <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:21,fontWeight:'bold'}}>Découvrez</Text>
                     <View>
                         <FlatList
                             data={data}
                             keyExtractor={(item) => item.id.toString()}
-                            renderItem={({item})=> <ListeMenuItem item={item} goToReseautage={this.goToReseautagePage} navigation={this.props.navigation} />}
+                            renderItem={({item})=> <ListeMenuItem item={item} goToReseautage={this.goToReseautagePage} />}
                         />
 
                     </View>
 
-                    <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Nos partenaires</Text>
+                    <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:21,fontWeight:'bold'}}>Nos partenaires</Text>
                     <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
                         <Image
-                            style={{height:250,width: 350}}
-                            source={require('../assets/logo_partenaire_awf.png')}
+                            style={{height:200,width: 350}}
+                            source={require('../assets/Logos.jpg')}
                         />
                     </View>
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Programme d'activités</Text>
@@ -121,8 +114,8 @@ export default class AssetExample extends React.Component {
 
                 </ScrollView>
                 <View style={{backgroundColor:'#0a2849', height:80,}}>
-                    <Text style={{textAlign:'center', color:'white',fontSize:13, padding:10}}>© AFRICA WEB APP - TOUS DROITS RESERVES</Text>
-                    <Text style={{textAlign:'center', color:'white',fontSize:13}}>App powered by WeenovIT ®</Text>
+                    <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© Africa Web Festival App - TOUS DROITS RESERVES</Text>
+                    <Text style={{textAlign:'center', color:'white',fontSize:12}}>App powered by WEENOVIT ®</Text>
                 </View>
             </View>
         );
@@ -139,7 +132,7 @@ const styles = StyleSheet.create({
     paragraph: {
         margin: 10,
         marginTop: 0,
-        fontSize: 20,
+        fontSize: 21,
         fontWeight: 'bold',
         textAlign: 'center',
     },
@@ -156,7 +149,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         height: 150,
-        width: 320,
+        width: 385,
         margin:10,
         alignSelf:'center',
     }

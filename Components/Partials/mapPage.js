@@ -53,7 +53,7 @@ export default class mapPage extends React.Component{
                             onPress={()=>this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Les speakers', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'SPEAKERS', style: { color: '#fff' } }}
                 />
 
                 <ScrollView style={{flex:1}}>

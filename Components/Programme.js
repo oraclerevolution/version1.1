@@ -29,13 +29,15 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
     const { routeName } = navigation.state;
     let IconComponent = Ionicons;
     let iconName;
-    if (routeName === 'Jeudi 21') {
+    if (routeName === 'Mercredi 20') {
+        iconName = `ios-calendar`;
+    } else if (routeName === 'Jeudi 21') {
         iconName = `ios-calendar`;
     } else if (routeName === 'Vendredi 22') {
         iconName = `ios-calendar`;
-    } else if (routeName === 'Samedi 23') {
+    } else if (routeName === 'Samedi 23'){
         iconName = `ios-calendar`;
-    } else if (routeName === 'Mercredi 20')
+    }
 
     // You can return any component that you like here!
     return <IconComponent name={iconName} size={25} color={tintColor} />;
