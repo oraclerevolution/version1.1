@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Text, TouchableOpacity, ScrollView} from 'react-native';
+import {StyleSheet, View, Text, ScrollView} from 'react-native';
 import { Button as Buttons } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Header} from 'react-native-elements'
