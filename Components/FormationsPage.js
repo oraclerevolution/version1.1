@@ -30,7 +30,7 @@ export default class FormationsPage extends React.Component{
                     <Text>Je suis la page de formation</Text>
                 </View>
                 <View style={{backgroundColor:'#0a2849', height:80,}}>
-                    <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© Africa Web Festival App - TOUS DROITS RESERVES</Text>
+                    <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© Africa Web Festival - TOUS DROITS RESERVES</Text>
                     <Text style={{textAlign:'center', color:'white',fontSize:12}}>App powered by WEENOVIT ®</Text>
                 </View>
             </View>

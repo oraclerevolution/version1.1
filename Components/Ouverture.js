@@ -42,7 +42,7 @@ export default class AssetExample extends React.Component {
                             onPress={()=>this.props.navigation.openDrawer()}
                         />
                     }
-                    centerComponent={{ text: 'Africa Web Festival App', style: { color: '#fff', fontSize:18} }}
+                    centerComponent={{ text: 'Africa Web Festival', style: { color: '#fff', fontSize:18} }}
                 />
                 <ScrollView style={styles.container}>
                     <Text style={styles.paragraph}>Quoi d'neuf ?</Text>
@@ -114,7 +114,7 @@ export default class AssetExample extends React.Component {
 
                 </ScrollView>
                 <View style={{backgroundColor:'#0a2849', height:80,}}>
-                    <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© Africa Web Festival App - TOUS DROITS RESERVES</Text>
+                    <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© Africa Web Festival - TOUS DROITS RESERVES</Text>
                     <Text style={{textAlign:'center', color:'white',fontSize:12}}>App powered by WEENOVIT ®</Text>
                 </View>
             </View>
