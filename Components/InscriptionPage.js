@@ -56,7 +56,7 @@ export default class InscriptionPage extends React.Component{
                     }
                     centerComponent={{ text: 'Authentification', style: { color: '#fff' } }}
                 />
-                <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
+                <View style={styles.form}>
                     <ImageBackground source={require('../assets/login.jpg')} style={{width: '100%', height: '100%', flex:1, alignItems: 'center', justifyContent: 'center'}}>
                         <Image
                             source={require('../assets/logo_awf.png')}
@@ -101,7 +101,7 @@ export default class InscriptionPage extends React.Component{
 
                     </ImageBackground>
 
-                </KeyboardAvoidingView>
+                </View>
             </View>
         );
     }
