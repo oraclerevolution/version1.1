@@ -9,16 +9,17 @@ export default class SamediTroisieme extends React.Component{
     constructor(){
         super()
         this.data = [
-            {time: '09:00', title: 'Panel #1', description: "TIC et Transmission des Relations intergénérationnelles\nSalle OIF"},
-            {time: '10:00', title: 'PROGRAMME JEUNES (Chapitre 4)', description: "Première partie : Comment provoquer le changement autour de nous\nEspace Jeune Public"},
-            {time: '10:20', title: 'PANEL #2', description: "Titre Panel #2\nSalle OIF"},
-            {time: '11:40', title: 'CHAMPIS DES TIC', description: "Salle OIF"},
-            {time: '11:30', title: 'Atelier participatif #1 en collaboration avec CFI', description: "– Dédiés aux Participants du CAMPUS AWF 2019\nThème : Jeunes & Nouvelles Technologies\nL’omniprésence des technologies : Défis, Opportunités & Perspectives pour la Jeunesse en Afrique\nSalle Orange"},
-            {time: '13:00', title: 'Pause'},
+            {time: '09:30', title: 'CONFERENCE\n', description: "e-Famille\nInclusion numérique: adopter les bonnes pratiques pour éviter les fractures générationnelles\nSalle OIF"},
+            {time: '10:30', title: 'CONFERENCES', description: "Famille, Bien-être & TIC\n1. Les médias sociaux et les jeunes : éthique, devoir et responsabilités\n2. Cybersécurité et Protection des données personnelles\n3. Améliorer l’accès des familles aux services de santé grâce aux TIC\nSalle OIF"},
+            {time: '11:40', title: 'PANELS/CONFERENCES', description: "Smart City\nPartie 1 : Les services publics à l’ère de la transformation digitale\nPartie 2 : Smart City : Quelle contribution des Green Tech, Clean Tech et Fablabs ?\nPartie 3 : L’environnement et la bonne gestion de l’eau : un enjeu majeur de développement durable\nSalle OIF"},
+            {time: '12:40', title: "Jeu Concours: CHAMPIS DES TIC (finales)", description: "En collaboration avec ANSUT\nSalle OIF"},
+            {time: '12:40', title: '– CAMPUS AWF 2019', description: "Présentation des résultats des travaux menés lors de la soirée Tribune Libre !\nSalle Orange"},
+            {time: '13:20', title: 'CEREMONIE DE CLOTURE', description:"- Discours\n- Remise de prix\n- Cocktail\n Salle OIF"},
             {time: '13:30', title: 'Cérémonie de cloture', description: "-Discours\n-Remises de prix\n-Cocktail\nSalle OIF"},
-            {time: '16:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-            {time: '17:00', title: 'Panel', description: "L'avantage du developpement mobile de nos jours\nDavid pio\nAssia N'goran\nHandon pierre"},
-
+        ],
+        this.data2=[
+            {time: '11:40', title: 'PROGRAMME JEUNES (Chapitre 3)', description:"Espace Jeune Public (Extérieur)"},
+            {time:"12:30"}
         ]
     }
 
@@ -45,18 +46,37 @@ export default class SamediTroisieme extends React.Component{
                     centerComponent={{ text: 'Samedi 23 Novembre', style: { color: '#fff', fontSize:18 } }}
                 />
                 <View style={styles.container}>
-                    <Timeline
-                        data={this.data}
-                        circleSize={20}
-                        circleColor='rgb(45,156,219)'
-                        lineColor='#6eccde'
-                        timeContainerStyle={{minWidth:52, marginTop: -5}}
-                        timeStyle={{textAlign: 'center', backgroundColor:'#0a2849', color:'white', padding:5, borderRadius:13}}
-                        descriptionStyle={{color:'gray'}}
-                        options={{
-                            style:{paddingTop:5,padding: 20}
-                        }}
-                    />
+                    <Text style={{fontSize:12, marginBottom:12}}>Journée Famille en partenariat avec l’UVICOCI (Union des Villes et Communes de Côte d’Ivoire) ; le Ministère des Sports le Ministère de la Ville ; le Ministère de la Femme, de la Famille et de l’Enfant ; le Ministère de la Modernisation de l'Administration et de l'Innovation du Service Public.</Text>
+
+                    <View style={{flex:3, marginBottom:15}}>
+                        <Timeline
+                            data={this.data}
+                            circleSize={20}
+                            circleColor='rgb(45,156,219)'
+                            lineColor='#6eccde'
+                            timeContainerStyle={{minWidth:52, marginTop: -5}}
+                            timeStyle={{textAlign: 'center', backgroundColor:'#0a2849', color:'white', padding:5, borderRadius:13}}
+                            descriptionStyle={{color:'gray'}}
+                            options={{
+                                style:{paddingTop:5,padding: 20}
+                            }}
+                        />
+                    </View>
+                    <View style={{flex:1}}>
+                        <Text style={{fontSize:17, margin:9, fontWeight:'600'}}>PROGRAMME JEUNE PUBLIC</Text>
+                        <Timeline
+                            data={this.data2}
+                            circleSize={20}
+                            circleColor='rgb(45,156,219)'
+                            lineColor='#6eccde'
+                            timeContainerStyle={{minWidth:52, marginTop: -5}}
+                            timeStyle={{textAlign: 'center', backgroundColor:'#0a2849', color:'white', padding:5, borderRadius:13}}
+                            descriptionStyle={{color:'gray'}}
+                            options={{
+                                style:{paddingTop:5,padding: 20}
+                            }}
+                        />
+                    </View>
                 </View>
             </View>
         )

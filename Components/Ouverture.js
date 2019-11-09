@@ -76,11 +76,23 @@ export default class AssetExample extends React.Component {
                     </View>
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Programme d'activités</Text>
                     <View style={{marginBottom:20}}>
+                        <TouchableOpacity  style={styles.item2} onPress={()=>this.props.navigation.navigate('mercredi')}>
+                            <View style={{flex:2}}>
+                                <Image
+                                    style={{height:80,width:90, borderRadius:5}}
+                                    source={require('../assets/mercredi.jpeg')}
+                                />
+                            </View>
+                            <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
+                                <Text style={{fontSize:19, fontWeight: 'bold'}}>Du matin au soir</Text>
+                            </View>
+                        </TouchableOpacity >
+
                         <TouchableOpacity  style={styles.item2} onPress={()=>this.props.navigation.navigate('jeudi')}>
                             <View style={{flex:2}}>
                                 <Image
                                     style={{height:80,width:90, borderRadius:5}}
-                                    source={require('../assets/samedi.png')}
+                                    source={require('../assets/jeudi.png')}
                                 />
                             </View>
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
@@ -104,7 +116,7 @@ export default class AssetExample extends React.Component {
                             <View style={{flex:2}}>
                                 <Image
                                     style={{height:80,width:90, borderRadius:5}}
-                                    source={require('../assets/jeudi.png')} />
+                                    source={require('../assets/samedi.png')} />
                             </View>
                             <View style={{flex:3,justifyContent:'center', alignItems: 'center'}}>
                                 <Text style={{fontSize:19, fontWeight: 'bold'}}>De 09h à 17h</Text>

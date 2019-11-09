@@ -16,6 +16,7 @@ import TicketPage from './TicketPage'
 import SpeakerDetail from './SpeakerDetail'
 import FormationsPage from './FormationsPage'
 import mapPage from './Partials/mapPage'
+import Mercredi from './Partials/Mercredi'
 import jeudiPremier from './Partials/JeudiPremier'
 import VendrediDeuxieme from './Partials/VendrediDeuxieme'
 import SamediTroisieme from './Partials/SamediTroisieme'
@@ -69,6 +70,12 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
     'speakers':{
         screen: mapPage,
+        navigationOptions:()=>({
+            drawerLabel: ()=>null
+        })
+    },
+    'mercredi':{
+        screen: Mercredi,
         navigationOptions:()=>({
             drawerLabel: ()=>null
         })
