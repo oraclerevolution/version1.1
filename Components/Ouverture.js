@@ -4,6 +4,7 @@ import {Header,Button as Buttons} from "react-native-elements";
 import Icon from 'react-native-vector-icons/Ionicons';
 import data from './Partials/listeMenuData'
 import ListeMenuItem from './Partials/ListeMenuItem'
+import SwipeableViews from 'react-swipeable-views-native';
 
 export default class AssetExample extends React.Component {
 
@@ -68,12 +69,37 @@ export default class AssetExample extends React.Component {
                     </View>
 
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:21,fontWeight:'bold'}}>Nos partenaires</Text>
-                    <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
-                        <Image
-                            style={{height:200,width: 350}}
-                            source={require('../assets/Logos.jpg')}
-                        />
-                    </View>
+                        <SwipeableViews style={styles.slideContainer}>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require('../assets/jeudi.png')}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>
+                                    Université virtuelle de ci
+                                </Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require('../assets/vendredi.png')}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>
+                                    Orange Cote d'Ivoire
+                                </Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require('../assets/samedi.png')}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>
+                                    Palais de la culture Abidjan
+                                </Text>
+                            </View>
+                        </SwipeableViews>
+                        <View style={{borderWidth:1, width:60, alignSelf:'center', borderColor:"#000"}}></View>
+
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Programme d'activités</Text>
                     <View style={{marginBottom:20}}>
                         <TouchableOpacity  style={styles.item2} onPress={()=>this.props.navigation.navigate('jeudi')}>
@@ -152,5 +178,21 @@ const styles = StyleSheet.create({
         width: 385,
         margin:10,
         alignSelf:'center',
-    }
+    },
+    slideContainer: {
+        height: 250,
+      },
+      slide: {
+        padding: 15,
+        height: 250,
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center'
+      },
+      text: {
+        color: '#000',
+        fontSize: 16,
+        textAlign:'center',
+        fontWeight:"630"
+      },
 });

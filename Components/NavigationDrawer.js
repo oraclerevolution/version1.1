@@ -49,9 +49,9 @@ const MyDrawerNavigator = createDrawerNavigator({
     'Le programme': {
         screen: Programme
     },
-    'Les formations': {
-        screen: FormationsPage
-    },
+    // 'Les formations': {
+    //     screen: FormationsPage
+    // },
     'Les actualités': {
         screen: ActualitesPage
     },

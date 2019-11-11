@@ -58,7 +58,7 @@ class ActualiteDetail extends React.Component {
                             </TouchableOpacity>
                         }
                         centerComponent={
-                            <Text style={{color: '#fff'}}>
+                            <Text style={{color: '#fff'}} numberOfLines={2} >
                                 {article.title}
                             </Text>
                         }
