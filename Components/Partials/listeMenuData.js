@@ -17,12 +17,12 @@ const data = [
         page:"speakers",
         iconName:"ios-person"
     },
-    // {
-    //     id:3,
-    //     name:'Formations',
-    //     page:"Les formations",
-    //     iconName:"ios-school"
-    // }
+    {
+        id:3,
+        name:'Formations',
+        page:"Les formations",
+        iconName:"ios-school"
+    }
 ]
 
 export default data

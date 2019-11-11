@@ -9,8 +9,9 @@ export default class Mercredi extends React.Component{
     constructor(){
         super()
         this.data = [
-            {time: '18:00', title: 'Cocktail AKWABA avec ORANGE CÔTE D\'IVOIRE', description: "6 à 8: Le reseautage des affaires !\nMaison du digital ORANGE CÔTE D'IVORE"},
-            {time: '20:00'},
+            {time: 'Matin', title: 'Cocktail AKWABA avec ORANGE CÔTE D\'IVOIRE', description: "6 à 8: Le reseautage des affaires !\nMaison du digital ORANGE CÔTE D'IVORE"},
+            {time: 'Aprèm', title:'VISITE DE LA FORET BANCO', description:'Deuxième plus grand forêt primaire au monde en plein centre-ville'},
+            {time: 'Soir', title:"6 à 8: le réseautage d'affaires !", description: "COCKTAIL AKWABA avec ORANGE COTE D'IVOIRE" },
 
         ]
     }

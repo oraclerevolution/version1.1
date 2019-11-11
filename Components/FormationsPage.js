@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Image} from 'react-native'
 import {Header, Button as Btns} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -27,7 +27,9 @@ export default class FormationsPage extends React.Component{
                     centerComponent={{ text: 'Les Formations', style: { color: '#fff' } }}
                 />
                 <View style={styles.container}>
-                    <Text>Je suis la page de formation</Text>
+                    <Image source={require('../assets/maintenance.jpg')}
+                    style={{width:250, height:250}} />
+                    <Text style={{fontSize:19, fontWeight:"bold"}}>Page en cours de maintenance</Text>
                 </View>
                 <View style={{backgroundColor:'#0a2849', height:80,}}>
                     <Text style={{textAlign:'center', color:'white',fontSize:12, padding:10}}>© Africa Web Festival - TOUS DROITS RESERVES</Text>

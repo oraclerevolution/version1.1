@@ -58,7 +58,7 @@ export default class ConnexionPage extends React.Component{
                           onPress={()=>this.props.navigation.openDrawer()}
                       />
                   }
-                  centerComponent={{ text: 'Connectez-vous', style: { color: '#fff' } }}
+                  centerComponent={{ text: 'Authentification', style: { color: '#fff' } }}
               />
               <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
                   <ImageBackground source={require('../assets/login.jpg')} style={{width: '100%', height: '100%', flex:1, alignItems: 'center', justifyContent: 'center'}}>
