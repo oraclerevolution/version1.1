@@ -19,7 +19,7 @@ export default class CardItem extends Component {
                     <Text style={{textAlign:'center', fontWeight:'bold', margin:6}}>{actualite.title}</Text>
                     <Image
                         source={{uri: 'http://51.68.44.231/images/'+image}}
-                        style={{height:200, width:300, borderWidth:1}}
+                        style={{height:200, width:300, alignSelf:'center'}}
                     />
                     <Text style={{marginBottom: 10}} numberOfLines={4}>
                         {actualite.article}

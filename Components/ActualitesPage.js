@@ -14,7 +14,6 @@ class ActualitesPage extends React.Component{
     }
 
     goDetail = (idArticle)=>{
-        console.log("Display article id " + idArticle)
         this.props.navigation.navigate('actualiteDetail',{ idArticle: idArticle})
     };
 

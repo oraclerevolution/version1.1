@@ -2,7 +2,6 @@ import React from 'react'
 import {StyleSheet, View, Text, Image, Button, ActivityIndicator, ScrollView, TouchableOpacity} from 'react-native'
 import {Button as Buttons, Header} from "react-native-elements";
 import Icon from 'react-native-vector-icons/Ionicons';
-import moment from 'moment'
 
 class ActualiteDetail extends React.Component {
 
@@ -10,7 +9,7 @@ class ActualiteDetail extends React.Component {
         super(props)
         this.state={
             article: undefined,
-            isLoading: true
+            isLoading: true,
         }
     }
 
@@ -58,7 +57,7 @@ class ActualiteDetail extends React.Component {
                             </TouchableOpacity>
                         }
                         centerComponent={
-                            <Text style={{color: '#fff'}}>
+                            <Text style={{color: '#fff'}} numberOfLines={2} >
                                 {article.title}
                             </Text>
                         }

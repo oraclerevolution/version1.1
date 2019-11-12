@@ -4,6 +4,7 @@ import {Header,Button as Buttons} from "react-native-elements";
 import Icon from 'react-native-vector-icons/Ionicons';
 import data from './Partials/listeMenuData'
 import ListeMenuItem from './Partials/ListeMenuItem'
+import SwipeableViews from 'react-swipeable-views-native';
 
 export default class AssetExample extends React.Component {
 
@@ -68,12 +69,66 @@ export default class AssetExample extends React.Component {
                     </View>
 
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:21,fontWeight:'bold'}}>Nos partenaires</Text>
-                    <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'white', padding:10}}>
-                        <Image
-                            style={{height:200,width: 350}}
-                            source={require('../assets/Logos.jpg')}
-                        />
-                    </View>
+                        <SwipeableViews style={styles.slideContainer}>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/logo_uvci.jpg")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>Université Virtuelle de côte d'ivoire</Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/logo_cipharm.png")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>CIPHARM</Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/logo_francophonie.png")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>Organisation Internationale de la Francophonie</Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/logo_montreal.png")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>Maison de l'Afrique à Montréal</Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/logo_orange.png")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>Orange Côte d'Ivoire</Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/logo_palais.png")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>Palais de la culture de Treichville</Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/logo_rti.png")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>Radio Télévision Ivoirienne</Text>
+                            </View>
+                            <View style={[styles.slide]}>
+                                <Image
+                                    source={require("../assets/ministere_economie.png")}
+                                    style={{width:300, height:200, marginBottom:10}}
+                                />
+                                <Text style={styles.text}>Ministère de l'économie numérique et de la poste</Text>
+                            </View>
+                        </SwipeableViews>
+                        <View style={{borderWidth:1, width:60, alignSelf:'center', borderColor:"#000"}}></View>
+
                     <Text style={{textAlign:'left', marginTop:25, marginBottom:5, fontSize:20,fontWeight:'bold'}}>Programme d'activités</Text>
                     <View style={{marginBottom:20}}>
                         <TouchableOpacity  style={styles.item2} onPress={()=>this.props.navigation.navigate('mercredi')}>
@@ -164,5 +219,21 @@ const styles = StyleSheet.create({
         width: 385,
         margin:10,
         alignSelf:'center',
-    }
+    },
+    slideContainer: {
+        height: 250,
+      },
+      slide: {
+        padding: 15,
+        height: 250,
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center'
+      },
+      text: {
+        color: '#000',
+        fontSize: 16,
+        textAlign:'center',
+        fontWeight:"bold"
+      },
 });
